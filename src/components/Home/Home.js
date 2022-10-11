@@ -29,7 +29,7 @@ const Home = () => {
           <main className="main">
               <section className="nav-hero-section">
               <div className="navigation">
-        <div className="  navigation-1">
+        <div className="navigation-1">
           <div className="navigation-icon-div">
             <img src="images/home.png" alt="home icon" />
           </div>
