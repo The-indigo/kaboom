@@ -1,0 +1,17 @@
+// album ids
+// 0Uf8CLgcWoLrYwmBcp0pio  
+// 5XNb9GHjQa9DA2tWeQzJxU
+//6HpMdN52TfJAwVbmkrFeBN
+//0lzPMIAYhhUSD2BPT0VQWI
+//1Rv9WRKyYhFaGbuYDaQunN
+//2jJReDZqTuAxr4R0ItimZc
+//6a8nlV9V8kPUbTTCJNVSsh
+//7nXJ5k4XgRj5OLg9m8V3zc
+//40GMAhriYJRO1rsY4YdrZb
+//4UlGauD7ROb3YbVOFMgW5u
+//4Uv86qWpGTxf7fU7lG5X6F
+//6kgDkAupBVRSqbJPUaTJwQ
+//6fG2eFCgUmytQWL6umtsCh
+//0LfM3PGkXE6KvJEE1HkOnz
+//69CmkikTHkGKdkrUZTtyWl
+//3tQd5mwBtVyxCoEo4htGAV
