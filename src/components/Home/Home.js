@@ -26,8 +26,10 @@ const Home = () => {
           />
         </div>
       </header>
-      <main className="main">
-        <div className=" navigation navigation-1">
+          <main className="main">
+              <section className="nav-hero-section">
+              <div className="navigation">
+        <div className="  navigation-1">
           <div className="navigation-icon-div">
             <img src="images/home.png" alt="home icon" />
           </div>
@@ -41,14 +43,16 @@ const Home = () => {
             <img src="images/videos.png" alt="home icon" />
           </div>
         </div>
-        <div className=" navigation navigation-2">
+        <div className="navigation-2">
           <div className="navigation-icon-div">
             <img src="images/profile.png" alt="home icon" />
           </div>
           <div className="navigation-icon-div">
             <img src="images/logout.png" alt="home icon" />
           </div>
-        </div>
+        </div>                 
+              </div>
+ 
         <div className="hero-section">
           <img src="images/heroSection.png" alt="hero section" />
         </div>
@@ -64,7 +68,9 @@ const Home = () => {
                            <img src="images/heart.png" alt="heart icon"/>
                       </div>
           </div>
-              </div>
+              </div>                 
+              </section>
+ 
               <section>
                   <h1>New releases</h1>
              

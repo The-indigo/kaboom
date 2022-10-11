@@ -45,3 +45,17 @@ input::placeholder {
 .search-icon {
     color: rgba(255, 255, 255, 0.25);
 }
+
+
+.nav-hero-section {
+    display: flex;
+}
+
+
+
+
+.new-releases {
+    display: flex;
+    gap: 2rem;
+    overflow: scroll;
+}
