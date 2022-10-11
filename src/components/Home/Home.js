@@ -1,7 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faSearch} from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
+import TopchartItem from "../shared/Topcharts/TopchartItem";
 
 const Home = () => {
   return (
@@ -56,18 +57,12 @@ const Home = () => {
         <div className="hero-section">
           <img src="images/heroSection.png" alt="hero section" />
         </div>
-        <div className="top-charts">
-                  <div className="top-charts-item">
-                      <img src="images/albums.png" alt="top chart items"/>
-                      <div className="top-charts-details">
-                          <p>Golden age of 8os</p>
-                          <p>Sean swadder</p>
-                            <p>2:34:45</p>
-                      </div>
-                      <div className="heart-div"> 
-                           <img src="images/heart.png" alt="heart icon"/>
-                      </div>
-          </div>
+          <div className="top-charts">
+            <h1>Top Charts</h1>
+            <div className="top-charts-div">
+<TopchartItem/>
+            </div>
+
               </div>                 
               </section>
  

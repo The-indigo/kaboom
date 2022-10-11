@@ -68,8 +68,13 @@ input::placeholder {
     margin-bottom: 2rem;
 }
 
+.top-charts {
+    width: 33%;
+}
 
-
+.top-charts-div {
+    /* border: 2px solid blue; */
+}
 
 .new-releases {
     display: flex;
