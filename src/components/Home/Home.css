@@ -74,6 +74,8 @@ input::placeholder {
 
 .hero-section {
     background-color: #609EAF;
+    /* horizontal,vertical,blur radius,spread radius,color */
+    box-shadow: 0 3px 10px -2px grey;
     border-radius: 2.5rem;
     background-image: url("/images/background.png");
     background-repeat: no-repeat;
