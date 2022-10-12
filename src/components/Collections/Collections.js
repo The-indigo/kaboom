@@ -1,4 +1,5 @@
 import React from "react"
+import CollectionsItem from "../shared/CollectionsItem/CollectionsItem";
 import "./Collections.css";
 
 const Collections = () => {
@@ -14,14 +15,20 @@ const Collections = () => {
             </section>
 
             <section className="collections-image-section">
-                <div className="collections">
-                    <img src="images/fly.png" alt="flying album" />
-                    <div className="collections-text">
-       <h1>Limits</h1>
-                    <p>John Watts</p>
-                    </div>
-             
-                </div>
+                <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
+                    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+
+    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+                    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+
+
+
             </section>
         </div>
     )
