@@ -56,7 +56,6 @@ input::placeholder {
 .nav-hero-section {
     display: flex;
     margin-top: 3rem;
-    /* justify-content: space-around; */
 }
 
 .navigation-1,
@@ -71,6 +70,64 @@ input::placeholder {
 
 .navigation-1 {
     margin-bottom: 2rem;
+}
+
+.hero-section {
+    background-color: #609EAF;
+    border-radius: 2.5rem;
+    background-image: url("/images/background.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    display: flex;
+    width: 60%;
+    max-width: 1000px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+
+.hero-section-image {
+    align-self: stretch;
+    flex-shrink: 0;
+    /* border: 2px solid red; */
+    /* width: 60%; */
+
+}
+
+.hero-section-text {
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.hero-section-rnb h1 {
+    margin-bottom: 0;
+}
+
+.hero-section-rnb p {
+    max-width: 450px;
+    line-height: 1.4;
+    margin-top: .4rem;
+}
+
+.hero-section-image img {
+    min-width: 100%;
+}
+
+.hero-section-likes {
+    display: flex;
+    align-items: center;
+}
+
+.hero-section-likes-1 {
+    display: flex;
+}
+
+.hero-section-likes-img {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .top-charts {

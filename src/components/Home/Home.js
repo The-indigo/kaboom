@@ -58,8 +58,44 @@ const Home = () => {
         </div>                 
               </div>
  
-        <div className="hero-section">
-          <img src="images/heroSection.png" alt="hero section" />
+            <div className="hero-section">
+              <div className="hero-section-text">
+                <p>Curated playlist</p>
+                <div className="hero-section-rnb">
+                  <h1>R & B Hits</h1>
+                  <p>All mine, Lie again, Petty call me everyday, Out of time, No love, Bad habit, and so much more</p>
+                </div>
+                <div className="hero-section-likes">
+                  <div className="hero-section-likes-1">
+        <div className="hero-section-likes-img">
+                    <img src="images/likes2.png"/>
+                  </div>
+                       <div className="hero-section-likes-img">
+                    <img src="images/likes2.png"/>
+                  </div>
+                       <div className="hero-section-likes-img">
+                    <img src="images/likes2.png"/>
+                  </div>
+                       <div className="hero-section-likes-img">
+                    <img src="images/likes2.png"/>
+                  </div>
+                       <div className="hero-section-likes-img">
+                    <img src="images/likes2.png"/>
+                  </div>
+                  </div>
+                  <div>
+                    <img src="images/heartwhite.png" alt="white heart icon"/>
+                  </div>
+                  <p>33k Likes</p>
+          
+                </div>
+
+              </div>
+              <div className="hero-section-image">
+                <img src="images/eric.png"/>
+              </div>
+         
+              {/* <img src="images/heroSection.png" alt="hero section" /> */}
         </div>
           <div className="top-charts">
             <h1>Top Charts</h1>
