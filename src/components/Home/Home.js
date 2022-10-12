@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
 import Nav from "../shared/Nav/Nav";
 import Mainpage from "../Mainpage/Mainpage";
+import Collections from "../Collections/Collections";
 
 const Home = () => {
+  const [page, setPage] = useState("home");
+  const homeClick = () => {
+    setPage("home")
+  }
+  const collectionsClick = () => {
+    setPage("collections")
+  }
   return (
     <>
       <div className="container">
         <Search />
         <main className="main">
           <section className="nav-hero-section">
-            <Nav />
-            <Mainpage />
+            <Nav homeClick={homeClick} collectionsClick={ collectionsClick} />
+        {page==="home" ?<Mainpage />:<Collections/> }    
           </section>
-
-          <section>
+{page==="home" ?        <section>
             <h1>New releases</h1>
             <div className="new-releases">
               <Newreleases
@@ -64,7 +71,8 @@ const Home = () => {
                 releaseTitle={"Here again"}
               />
             </div>
-          </section>
+          </section>: null }  
+  
         </main>
       </div>
     </>
