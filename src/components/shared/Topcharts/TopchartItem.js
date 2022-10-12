@@ -1,18 +1,18 @@
 import React from "react";
 import "./TopchartItem.css";
-const TopchartItem = () => {
+const TopchartItem = ({imageSource,trackName,tarckArtist,trackTime}) => {
     return (
         
         <div className="top-charts-item">
             <div className="top-charts-item-img-details">
          <div className="top-charts-item-image-div">
-                      <img src="images/albums.png" alt="top chart items"/>
+                      <img src={imageSource} alt="top chart items"/>
 
             </div>
                       <div className="top-charts-details">
-                          <p>Golden age of 8os</p>
-                          <p>Sean swadder</p>
-                            <p>2:34:45</p>
+                          <p>{trackName}</p>
+                          <p>{tarckArtist}</p>
+                            <p>{trackTime}</p>
                       </div>
             </div>
    

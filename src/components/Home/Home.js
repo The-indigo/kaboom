@@ -60,7 +60,16 @@ const Home = () => {
           <div className="top-charts">
             <h1>Top Charts</h1>
             <div className="top-charts-div">
-<TopchartItem/>
+              <TopchartItem imageSource={"images/face.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
+              trackTime={"2:34:45"}
+              />
+                        <TopchartItem imageSource={"images/fly.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
+              trackTime={"2:34:45"}
+              />
+                        <TopchartItem imageSource={"images/lead.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
+              trackTime={"2:34:45"}
+              />
+
             </div>
 
               </div>                 

@@ -9,7 +9,8 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    border-radius: 1rem;
+    margin-bottom: .6rem;
+    border-radius: 1.5rem;
     /* border: 2px solid red; */
     /* width: 80%; */
 }
@@ -43,12 +44,13 @@ p {
 
 .top-charts-item-image-div img {
     width: 100%;
+    border-radius: .5rem;
 }
 
 .top-charts-item-image-div {
     /* border: 2px solid yellow; */
-    height: 4.5rem;
-    width: 4.5rem;
+    height: 4rem;
+    width: 4rem;
     margin-right: 1rem;
 
 }
