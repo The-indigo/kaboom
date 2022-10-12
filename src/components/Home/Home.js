@@ -7,7 +7,7 @@ import Mainpage from "../Mainpage/Mainpage";
 import Collections from "../Collections/Collections";
 
 const Home = () => {
-  const [page, setPage] = useState("home");
+  const [page, setPage] = useState("collections");
   const homeClick = () => {
     setPage("home")
   }
@@ -21,7 +21,7 @@ const Home = () => {
         <main className="main">
           <section className="nav-hero-section">
             <Nav homeClick={homeClick} collectionsClick={ collectionsClick} />
-        {page==="home" ?<Mainpage />:<Collections/> }    
+        {page==="home" ?<Mainpage />: <Collections/> }    
           </section>
 {page==="home" ?        <section>
             <h1>New releases</h1>

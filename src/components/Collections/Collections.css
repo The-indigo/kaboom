@@ -1,0 +1,40 @@
+.collections-sections {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.collections-button {
+    border: 1px solid grey;
+    /* display: flex;
+    justify-content: center; */
+    padding: .45rem 1rem;
+    /* align-items: center; */
+    border-radius: 5rem;
+}
+
+.collections-button p {
+    margin: 0;
+    font-size: .8rem;
+}
+
+
+.collections {
+    position: relative;
+}
+
+.collections-text {
+    position: absolute;
+    bottom: 0;
+    padding-left: .7rem;
+}
+
+.collections-text h1 {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.collections-text p {
+    margin-top: 0;
+    font-size: .6rem;
+}
