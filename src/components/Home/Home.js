@@ -1,36 +1,14 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch} from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
 import TopchartItem from "../shared/Topcharts/TopchartItem";
 import Newreleases from "../shared/Newreleases/Newreleases";
+import Search from "../shared/Search/Search";
 
 const Home = () => {
   return (
     <>
       <div className="container">
-        
-   
-      <header className="header">
-        <img src="images/logo.png" alt="logo" />
-
-        <div className={"searchinput-div"}>
-          <FontAwesomeIcon
-            icon={faSearch}
-            size="1x"
-            width={11}
-            className="search-icon"
-          />
-
-          <input
-            type="text"
-            className={"search-box"}
-            placeholder="Search artists"
-            //   onChange={handleSearchCountry}
-            //   value={searchValue}
-          />
-        </div>
-      </header>
+<Search/>
           <main className="main">
               <section className="nav-hero-section">
               <div className="navigation">
