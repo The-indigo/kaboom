@@ -8,6 +8,9 @@ import Newreleases from "../shared/Newreleases/Newreleases";
 const Home = () => {
   return (
     <>
+      <div className="container">
+        
+   
       <header className="header">
         <img src="images/logo.png" alt="logo" />
 
@@ -97,7 +100,8 @@ const Home = () => {
 
                   </div>
                    </section>
-      </main>
+        </main>
+           </div>
     </>
   );
 };
