@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch} from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
 import TopchartItem from "../shared/Topcharts/TopchartItem";
+import Newreleases from "../shared/Newreleases/Newreleases";
 
 const Home = () => {
   return (
@@ -79,72 +80,20 @@ const Home = () => {
                   <h1>New releases</h1>
              
               <div className="new-releases">
-                  <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
-                       <div className="new-releases-div">
-                  <div className="new-releases-image-div">
-                      <img src="images/alpha.png" alt="new release"/>
-                      </div>  
-                  <p>Life in a bubble</p>    
-                  </div>
+            <Newreleases imageSource={"images/alpha.png"} releaseTitle={"Life in a bubble"} />
+            <Newreleases imageSource={"images/mountain.png"} releaseTitle={"Mountain"} />
+            <Newreleases imageSource={"images/fly.png"} releaseTitle={"Limits"} />
+            <Newreleases imageSource={"images/sun.png"} releaseTitle={"Everything black"} />
+            <Newreleases imageSource={"images/face.png"} releaseTitle={"Cancelled"} />
+            <Newreleases imageSource={"images/ink.png"} releaseTitle={"Nomad"} />
+            <Newreleases imageSource={"images/blind.png"} releaseTitle={"Blind"} />
+            <Newreleases imageSource={"images/lead.png"} releaseTitle={"Alone"} />
+            <Newreleases imageSource={"images/black.png"} releaseTitle={"Face off"} />
+            <Newreleases imageSource={"images/mountain.png"} releaseTitle={"Gone"} />
+            <Newreleases imageSource={"images/sun.png"} releaseTitle={"Here again"} />
+
+            
+ 
 
                   </div>
                    </section>
