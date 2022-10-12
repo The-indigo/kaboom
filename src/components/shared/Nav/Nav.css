@@ -1,0 +1,13 @@
+.navigation-1,
+.navigation-2 {
+    background-color: #1A1E1F;
+    padding: 1.4rem .9rem;
+    border-radius: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.navigation-1 {
+    margin-bottom: 2rem;
+}
