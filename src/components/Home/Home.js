@@ -4,16 +4,59 @@ import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
 import Nav from "../shared/Nav/Nav";
 import Mainpage from "../Mainpage/Mainpage";
+import bg from "./lead.png"
 import Collections from "../Collections/Collections";
+import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
 
 const Home = () => {
-  const [page, setPage] = useState("collections");
+  const [page, setPage] = useState("topcharts");
   const homeClick = () => {
     setPage("home")
   }
   const collectionsClick = () => {
     setPage("collections")
   }
+  const topChartsClick=()=>{
+    setPage("topcharts")
+    // document.body.style.backgroundImage = `url(${bg})`
+    // document.body.style.backgroundRepeat = "no-repeat"
+    // document.body.style.backgroundSize = "cover"
+    // document.body.style.backgroundColor="#1E1E1E"
+    // document.body.style.backgroundBlendMode='multiply'
+  }
+
+  if (page === "collections") {
+    return (
+        
+   <>
+      <div className="container">
+        <Search />
+        <main className="main">
+          <section className="nav-hero-section">
+            <Nav homeClick={homeClick} collectionsClick={ collectionsClick} />
+         <Collections />  
+          </section>
+        </main>
+      </div>
+    </>
+
+    )
+  } else if (page === "topcharts") {
+    return (
+              
+   <>
+      <div className="container">
+        <Search />
+        <main className="main">
+          <section className="nav-hero-section">
+            <Nav homeClick={homeClick} collectionsClick={ collectionsClick} />
+          <Viewchartoralbum/>
+          </section>
+        </main>
+      </div>
+    </>
+    )
+  } else if (page === "home") {
   return (
     <>
       <div className="container">
@@ -21,7 +64,7 @@ const Home = () => {
         <main className="main">
           <section className="nav-hero-section">
             <Nav homeClick={homeClick} collectionsClick={ collectionsClick} />
-        {page==="home" ?<Mainpage />: <Collections/> }    
+        <Mainpage topChartsClick={topChartsClick}/>
           </section>
 {page==="home" ?        <section>
             <h1>New releases</h1>
@@ -76,6 +119,9 @@ const Home = () => {
         </main>
       </div>
     </>
-  );
+  );  
+  }
+
+  
 };
 export default Home;

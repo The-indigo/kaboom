@@ -1,0 +1,73 @@
+body {
+    /* background-image: url("/images/lead.png");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.view-chart {
+    width: 100%;
+
+}
+
+.viewchart-div,
+.viewchart-button-div {
+    display: flex;
+}
+
+.viewchart-div {
+    align-items: flex-end;
+    /* align-items: flex-end; */
+}
+
+.viewchart-div h1 {
+    color: #A4C7C6;
+    margin-bottom: 0;
+    font-weight: 800;
+}
+
+.viewchart-text-div-p1,
+.viewchart-text-div-p2 {
+    font-weight: 400;
+    font-size: .9rem;
+    width: 60%;
+    color: #EFEEE0;
+    max-width: 850px;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+}
+
+.viewchart-text-div {
+    margin-left: 2rem;
+}
+
+
+.viewchart-image-div {
+    width: 15rem;
+    height: 15rem;
+
+}
+
+.viewchart-image-div img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 1.5rem;
+}
+
+.viewchart-button-div {
+    gap: 1rem;
+    align-items: center;
+}
+
+.chart-button {
+    border: 1px solid grey;
+}
+
+/* .like-button {
+    background-color: rgba(255, 255, 255, 0.11);
+    padding: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+} */

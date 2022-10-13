@@ -1,9 +1,9 @@
 import React from "react";
 import "./TopchartItem.css";
-const TopchartItem = ({imageSource,trackName,tarckArtist,trackTime}) => {
+const TopchartItem = ({imageSource,trackName,tarckArtist,trackTime,onClick}) => {
     return (
         
-        <div className="top-charts-item">
+        <div className="top-charts-item" onClick={onClick}>
             <div className="top-charts-item-img-details">
          <div className="top-charts-item-image-div">
                       <img src={imageSource} alt="top chart items"/>
