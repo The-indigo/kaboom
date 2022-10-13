@@ -1,11 +1,7 @@
-body {
-    /* background-image: url("/images/lead.png");
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
-
 .view-chart {
     width: 100%;
+
+    /* position: relative; */
 
 }
 
@@ -16,6 +12,7 @@ body {
 
 .viewchart-div {
     align-items: flex-end;
+    /* position: relative; */
     /* align-items: flex-end; */
 }
 
@@ -32,8 +29,12 @@ body {
     width: 60%;
     color: #EFEEE0;
     max-width: 850px;
-    margin-top: .4rem;
+    margin-top: 1rem;
     margin-bottom: .4rem;
+}
+
+.viewchart-text-div-p2 {
+    margin-bottom: 2.4rem;
 }
 
 .viewchart-text-div {
@@ -60,14 +61,31 @@ body {
 }
 
 .chart-button {
-    border: 1px solid grey;
-}
-
-/* .like-button {
-    background-color: rgba(255, 255, 255, 0.11);
-    padding: .7rem;
+    backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: .55rem 1rem;
+    border-radius: 2rem
+}
+
+.like-button {
     border-radius: 50%;
-} */
+    padding: .5rem
+}
+
+.chart-button p {
+    margin: 0;
+}
+
+.tracks {
+    margin-top: 2rem;
+    top: 0;
+}
+
+.tracks p {
+    font-size: .8rem;
+
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./Home.css";
 import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
@@ -9,7 +9,18 @@ import Collections from "../Collections/Collections";
 import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
 
 const Home = () => {
-  const [page, setPage] = useState("topcharts");
+  const [page, setPage] = useState("home");
+  useLayoutEffect(() => {
+    if (page === "topcharts") {
+          document.body.style.backgroundImage = `url(${bg})`
+    document.body.style.backgroundRepeat = "no-repeat"
+    document.body.style.backgroundSize = "100% 80vh"
+    document.body.style.backgroundColor="#1E1E1E"
+      // document.body.style.backgroundBlendMode="smooth"
+    } else {
+      document.body.style.backgroundImage = 'none'
+    }
+  },[page])
   const homeClick = () => {
     setPage("home")
   }
@@ -18,12 +29,9 @@ const Home = () => {
   }
   const topChartsClick=()=>{
     setPage("topcharts")
-    // document.body.style.backgroundImage = `url(${bg})`
-    // document.body.style.backgroundRepeat = "no-repeat"
-    // document.body.style.backgroundSize = "cover"
-    // document.body.style.backgroundColor="#1E1E1E"
-    // document.body.style.backgroundBlendMode='multiply'
   }
+
+
 
   if (page === "collections") {
     return (
