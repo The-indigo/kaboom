@@ -15,3 +15,34 @@
     gap: 2rem;
     overflow: scroll;
 }
+
+.audio-div,
+.audio-player-details {
+    display: flex;
+
+}
+
+.audio-div {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: saturate(280%) blur(3px) contrast(.8);
+}
+
+.audio-image-div {
+    height: 2rem;
+    width: 2rem;
+}
+
+.audio-image-div img {
+    width: 100%;
+}
+
+@supports(-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .audio-div {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
