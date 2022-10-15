@@ -16,28 +16,126 @@
     overflow: scroll;
 }
 
-.audio-div,
-.audio-player-details {
+.audio-container,
+.audio-player-details,
+.audio-top-controls {
     display: flex;
+    /* border: 2px solid yellow; */
 
 }
 
 .audio-div {
     position: sticky;
     bottom: 0;
+    margin-bottom: 0;
     z-index: 2;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: saturate(280%) blur(3px) contrast(.8);
+    background: rgba(51, 55, 59, 0.37);
+    backdrop-filter: blur(5px);
 }
 
 .audio-image-div {
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 .audio-image-div img {
     width: 100%;
+}
+
+.audio-player-details {
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.audio-text-div {
+    margin-left: 1rem;
+
+}
+
+.audio-player-details p {
+    margin: 0;
+}
+
+.audio-player-details p:nth-child(1) {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.audio-player-details p:nth-child(2) {
+    font-size: .7rem;
+    color: rgba(255, 255, 255, 0.44);
+    margin-top: .2rem;
+}
+
+.audio-controls-div {
+    width: 70%;
+}
+
+.audio-top-controls {
+    gap: 2rem;
+    /* align-self: center; */
+    justify-content: center;
+}
+
+.audio-bottom-controls {
+    /* border: 2px solid red; */
+    margin-top: 1.4rem;
+    margin-left: 3rem;
+}
+
+input[type=range] {
+
+    width: 100%;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2.4px;
+    background: grey;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background: #FACD66;
+    margin-top: -5px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: grey;
+}
+
+
+input[type=range]::-ms-fill-lower {
+    background: #FACD66;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: red;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #FACD66;
+
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #FACD66;
+
 }
 
 @supports(-webkit-backdrop-filter: none) or (backdrop-filter: none) {

@@ -101,10 +101,10 @@ const Home = () => {
                       releaseTitle={e.name?e.name:"Mountain"}
                     />
                   ))}
-                  {/* <Newreleases
+                  <Newreleases
                     imageSource={"images/alpha.png"}
                     releaseTitle={"Life in a bubble"}
-                  /> */}
+                  />
                   {/* <Newreleases
                     imageSource={"images/mountain.png"}
                     releaseTitle={"Mountain"}
@@ -151,6 +151,9 @@ const Home = () => {
           </main>
         </div>
         <div className="audio-div">
+          <div className="container audio-container">
+
+        
           <div className="audio-player-details">
         <div className="audio-image-div"> 
             <img src="images/face.png"/>
@@ -174,6 +177,12 @@ const Home = () => {
             size="1x"
             width={11}
             className="audio-icon"
+                />
+                         <FontAwesomeIcon
+            icon={faPlay}
+            size="1x"
+            width={11}
+            className="audio-icon"
               />
                     <FontAwesomeIcon
             icon={faForwardStep}
@@ -181,12 +190,7 @@ const Home = () => {
             width={11}
             className="audio-icon"
               />
-                    <FontAwesomeIcon
-            icon={faPlay}
-            size="1x"
-            width={11}
-            className="audio-icon"
-              />
+           
                     <FontAwesomeIcon
             icon={faRepeat}
             size="1x"
@@ -195,9 +199,13 @@ const Home = () => {
           />
             </div>
                  <div className="audio-bottom-controls">
-
+                  <input type={"range"}/>
             </div>
-    </div>
+            </div>
+             <div className="audio-volume-controls">
+                  <input type={"range"}/>
+            </div>
+              </div>
            <audio id="audio-player"
           src={""}
           // ref={""}
