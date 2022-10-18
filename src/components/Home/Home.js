@@ -105,6 +105,19 @@ const Home = () => {
                     imageSource={"images/alpha.png"}
                     releaseTitle={"Life in a bubble"}
                   />
+                    <Newreleases
+                    imageSource={"images/alpha.png"}
+                    releaseTitle={"Life in a bubble"}
+                  />
+                    <Newreleases
+                    imageSource={"images/alpha.png"}
+                    releaseTitle={"Life in a bubble"}
+                  />
+                    <Newreleases
+                    imageSource={"images/alpha.png"}
+                    releaseTitle={"Life in a bubble"}
+                  />
+                  
                   {/* <Newreleases
                     imageSource={"images/mountain.png"}
                     releaseTitle={"Mountain"}
