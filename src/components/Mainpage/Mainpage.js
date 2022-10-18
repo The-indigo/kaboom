@@ -54,6 +54,13 @@ const Mainpage = ({topChartsClick}) => {
               trackTime={"2:34:45"} onClick={ topChartsClick}
               />
 
+                        <TopchartItem imageSource={"images/fly.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
+              trackTime={"2:34:45"} onClick={ topChartsClick}
+              />
+                        <TopchartItem imageSource={"images/lead.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
+              trackTime={"2:34:45"} onClick={ topChartsClick}
+              />
+
             </div>
 
               </div> 

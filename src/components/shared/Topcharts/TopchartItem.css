@@ -70,4 +70,9 @@
         padding: 1rem;
         margin-right: 2rem;
     }
+
+    .top-charts-item-image-div {
+        height: 5rem;
+        width: 5rem;
+    }
 }

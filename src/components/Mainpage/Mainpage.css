@@ -72,6 +72,7 @@
 
     .top-charts {
         width: 100%;
+        max-width: 100%
     }
 
     .top-charts-div {
