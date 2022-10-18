@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat} from "@fortawesome/free-solid-svg-icons";
+import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh} from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
 import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
@@ -199,11 +199,17 @@ const Home = () => {
           />
             </div>
                  <div className="audio-bottom-controls">
-                  <input type={"range"}/>
+                  <input type={"range"} min="0" value="25" max="100"/>
             </div>
             </div>
-             <div className="audio-volume-controls">
-                  <input type={"range"}/>
+            <div className="audio-volume-controls volume-control">
+                          <FontAwesomeIcon
+            icon={faVolumeHigh}
+            size="1x"
+            width={11}
+            className="audio-icon"
+              />
+                  <input type={"range"} min="0" value="25" max="200"/>
             </div>
               </div>
            <audio id="audio-player"

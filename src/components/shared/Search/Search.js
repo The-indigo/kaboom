@@ -1,14 +1,24 @@
 import React from "react"
 import "./Search.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch} from "@fortawesome/free-solid-svg-icons";
+import { faSearch,faBars} from "@fortawesome/free-solid-svg-icons";
 const Search = () => {
     return (
         <>
-    <header className="header">
-        <img src="images/logo.png" alt="logo" />
+        <header className="header">
+          <div>
 
-        <div className={"searchinput-div"}>
+    <FontAwesomeIcon
+            icon={faBars}
+            size="2x"
+            width={22}
+            className="mobile-menu-icon"
+          />
+        <img src="images/logo.png" alt="logo" />
+          </div>
+         
+
+        <div className="searchinput-div">
           <FontAwesomeIcon
             icon={faSearch}
             size="1x"

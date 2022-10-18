@@ -50,3 +50,19 @@ input::placeholder {
 .search-icon {
     color: rgba(255, 255, 255, 0.25);
 }
+
+@media (min-width:800px) {
+    .mobile-menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width:800px) {
+    .mobile-menu-icon {
+        margin-right: 1rem;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+}

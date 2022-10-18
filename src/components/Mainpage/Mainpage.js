@@ -29,7 +29,7 @@ const Mainpage = ({topChartsClick}) => {
                     <img src="images/likes2.png" alt="likes by profile"/>
                   </div>
                   </div>
-                  <div>
+                  <div className="heart-white-div">
                     <img src="images/heartwhite.png" alt="white heart icon"/>
                   </div>
                   <p>33k Likes</p>

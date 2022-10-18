@@ -18,10 +18,17 @@
 
 .audio-container,
 .audio-player-details,
-.audio-top-controls {
+.audio-top-controls,
+.volume-control {
     display: flex;
     /* border: 2px solid yellow; */
 
+}
+
+.volume-control {
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.4rem;
 }
 
 .audio-div {
@@ -74,23 +81,24 @@
 
 .audio-top-controls {
     gap: 2rem;
+    /* align-self: center; */
     justify-content: center;
 }
 
 .audio-bottom-controls {
+    /* border: 2px solid red; */
     margin-top: 1.4rem;
     margin-left: 3rem;
 }
 
 input[type=range] {
-
     width: 100%;
-    background: transparent;
+    /* background: red; */
     -webkit-appearance: none;
 }
 
-
 input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
     width: 100%;
     height: 2.4px;
     background: grey;
@@ -101,7 +109,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-webkit-slider-thumb {
-    /* -webkit-appearance: none; */
+    -webkit-appearance: none;
     height: 13px;
     width: 13px;
     border-radius: 50%;
@@ -113,32 +121,38 @@ input[type=range]:focus {
     outline: none;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: grey;
+
+
+
+input[type="range"]::-moz-range-progress {
+    background-color: #43e5f7;
 }
 
-
-input[type=range]::-ms-fill-lower {
-    background: #FACD66;
+input[type="range"]::-moz-range-track {
+    background-color: #9a905d;
 }
 
-input[type=range]::-ms-fill-upper {
-    background: red;
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+    background-color: #43e5f7;
 }
 
-input[type=range]:focus::-ms-fill-lower {
-    background: #FACD66;
-
+input[type="range"]::-ms-fill-upper {
+    background-color: #9a905d;
 }
 
-input[type=range]:focus::-ms-fill-upper {
-    background: #FACD66;
-
-}
 
 @supports(-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .audio-div {
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
+}
+
+@media (max-width:800px) {
+    .nav-hero-section {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
 }
