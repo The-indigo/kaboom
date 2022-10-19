@@ -6,6 +6,7 @@
 }
 
 
+
 .audio-image-div {
     height: 2.5rem;
     width: 2.5rem;
@@ -116,7 +117,6 @@ input[type="range"]::-ms-fill-upper {
 
 @media(max-width:800px) {
     .audio-container {
-        border: 2px solid red;
         align-items: center;
     }
 
@@ -125,7 +125,6 @@ input[type="range"]::-ms-fill-upper {
     }
 
     .audio-player-details {
-        border: 2px solid green;
         flex: 2;
     }
 

@@ -15,7 +15,7 @@ import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
 let albumData = [];
 
 const Home = () => {
-  const [page, setPage] = useState("home");
+  const [page, setPage] = useState("collections");
   const [albums,setAlbums]=useState([])
   useEffect(() => {
     // const fetchAlbums = async () => {

@@ -1,14 +1,15 @@
 .collections {
     position: relative;
-    width: 11rem;
-    height: 12rem;
+
     margin-bottom: 1.5rem;
 }
 
 .collections img {
     border-radius: 15px;
+    max-width: 100%;
     width: 100%;
     height: 100%;
+
 }
 
 .collections-text {
@@ -25,4 +26,54 @@
 .collections-text p {
     margin-top: 0;
     font-size: .6rem;
+}
+
+@media (min-width:800.01px) {
+    .collections {
+        width: 11rem;
+        height: 12rem;
+    }
+}
+
+@media (max-width:800px) {
+    .collections {
+        /* height: 16rem; */
+        object-fit: contain;
+        /* border: 2px solid red; */
+    }
+
+    /* source: https://pqina.nl/blog/presenting-images-in-an-aspect-ratio-with-css/ */
+    /* The images are potrait so they aren't wide enough */
+    /* This aims to make it fit the container wit=dth without making the image skewed */
+    .collections::after {
+        display: block;
+        content: '';
+        /* 16:9 aspect ratio */
+        padding-bottom: 56.25%;
+    }
+
+    /* Image is positioned absolutely relative to the parent element */
+    .collections img {
+        /* Image should match parent box size */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .collections-text {
+        width: 92%;
+    }
+
+    .collections-likes {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .collections-likes-text p {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
 }

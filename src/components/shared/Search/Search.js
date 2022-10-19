@@ -11,7 +11,7 @@ const Search = () => {
     <FontAwesomeIcon
             icon={faBars}
             size="2x"
-            width={22}
+            width={17}
             className="mobile-menu-icon"
           />
         <img src="images/logo.png" alt="logo" />

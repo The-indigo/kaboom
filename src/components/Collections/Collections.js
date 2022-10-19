@@ -23,11 +23,6 @@ const Collections = () => {
     <CollectionsItem imageSource={"images/sun.png"} name="Limits" artist={"John Watts"}/>
                     <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
                 <CollectionsItem imageSource={"images/alpha.png"} name="Limits" artist={"John Watts"} />
-                
- 
-
-
-
             </section>
         </div>
     )

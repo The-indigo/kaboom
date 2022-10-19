@@ -19,8 +19,28 @@
 }
 
 .collections-image-section {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 1rem;
+}
+
+
+@media(max-width:800px) {
+    .collections-image-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media(min-width:800.01px) {
+
+    .collections-image-section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /* .collections-image-section {
+        display: grid;
+        grid-template-rows: 1rem;
+    } */
 }
