@@ -1,7 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh} from "@fortawesome/free-solid-svg-icons";
+
 import "./Home.css";
 import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
@@ -10,6 +9,7 @@ import Mainpage from "../Mainpage/Mainpage";
 import bg from "./lead.png";
 import Collections from "../Collections/Collections";
 import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
+import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
 
 
 let albumData = [];
@@ -105,20 +105,8 @@ const Home = () => {
                     imageSource={"images/alpha.png"}
                     releaseTitle={"Life in a bubble"}
                   />
-                    <Newreleases
-                    imageSource={"images/alpha.png"}
-                    releaseTitle={"Life in a bubble"}
-                  />
-                    <Newreleases
-                    imageSource={"images/alpha.png"}
-                    releaseTitle={"Life in a bubble"}
-                  />
-                    <Newreleases
-                    imageSource={"images/alpha.png"}
-                    releaseTitle={"Life in a bubble"}
-                  />
                   
-                  {/* <Newreleases
+                 <Newreleases
                     imageSource={"images/mountain.png"}
                     releaseTitle={"Mountain"}
                   />
@@ -157,78 +145,14 @@ const Home = () => {
                   <Newreleases
                     imageSource={"images/sun.png"}
                     releaseTitle={"Here again"}
-                  /> */}
+                  /> 
                 </div>
               </section>
             
           </main>
         </div>
         <div className="audio-div">
-          <div className="container audio-container">
-
-        
-          <div className="audio-player-details">
-        <div className="audio-image-div"> 
-            <img src="images/face.png"/>
-            </div>
-            <div className="audio-text-div">
-              <p>Seasons in</p>
-              <p>James</p>
-            </div>
-          </div>
-
-          <div className="audio-controls-div">
-            <div className="audio-top-controls">
-         <FontAwesomeIcon
-            icon={faShuffle}
-            size="1x"
-            width={11}
-            className="audio-icon"
-              />
-                    <FontAwesomeIcon
-            icon={faBackwardStep}
-            size="1x"
-            width={11}
-            className="audio-icon"
-                />
-                         <FontAwesomeIcon
-            icon={faPlay}
-            size="1x"
-            width={11}
-            className="audio-icon"
-              />
-                    <FontAwesomeIcon
-            icon={faForwardStep}
-            size="1x"
-            width={11}
-            className="audio-icon"
-              />
-           
-                    <FontAwesomeIcon
-            icon={faRepeat}
-            size="1x"
-            width={11}
-            className="audio-icon"
-          />
-            </div>
-                 <div className="audio-bottom-controls">
-                  <input type={"range"} min="0" value="25" max="100"/>
-            </div>
-            </div>
-            <div className="audio-volume-controls volume-control">
-                          <FontAwesomeIcon
-            icon={faVolumeHigh}
-            size="1x"
-            width={11}
-            className="audio-icon"
-              />
-                  <input type={"range"} min="0" value="25" max="200"/>
-            </div>
-              </div>
-           <audio id="audio-player"
-          src={""}
-          // ref={""}
-        ></audio>
+       <Audiocontrols/>
         </div>
       </>
     );
