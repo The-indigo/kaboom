@@ -21,9 +21,13 @@ const Viewchartoralbum = () => {
                         <div className="add-button chart-button">
                             <img src='images/musicadd.png' alt='add music icon'/>
                     <p>Add to collection</p>
+                        </div>
+                            <div className="add-button chart-button">
+                            <img src="images/heartred.png" alt="heart icon" />
+                    <p>Like</p>
                 </div>
-                  <div className="like-button chart-button"> 
-                           <img src="images/heartred.png" alt="heart icon"/>
+                  <div className="like-button chart-button mobile-hide"> 
+                            <img src="images/heartred.png" alt="heart icon" />
                 </div>
                 </div>
                 </div>

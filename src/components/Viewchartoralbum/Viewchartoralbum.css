@@ -1,8 +1,5 @@
 .view-chart {
     width: 100%;
-
-    /* position: relative; */
-
 }
 
 .viewchart-div,
@@ -10,11 +7,8 @@
     display: flex;
 }
 
-.viewchart-div {
-    align-items: flex-end;
-    /* position: relative; */
-    /* align-items: flex-end; */
-}
+
+
 
 .viewchart-div h1 {
     color: #A4C7C6;
@@ -42,12 +36,6 @@
 }
 
 
-.viewchart-image-div {
-    width: 15rem;
-    height: 15rem;
-
-}
-
 .viewchart-image-div img {
     width: 100%;
     height: 100%;
@@ -68,7 +56,7 @@
     gap: 1rem;
     background-color: rgba(255, 255, 255, 0.07);
     padding: .55rem 1rem;
-    border-radius: 2rem
+    border-radius: 2rem;
 }
 
 .like-button {
@@ -88,4 +76,49 @@
 .tracks p {
     font-size: .8rem;
 
+}
+
+@media (min-width:800.01px) {
+    .viewchart-div {
+        align-items: flex-end;
+    }
+
+    .viewchart-image-div {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .desktop-hide {
+        display: none;
+    }
+
+}
+
+@media(max-width:800px) {
+    .viewchart-button-div {
+        flex-wrap: wrap;
+        gap: .3rem;
+        align-items: center;
+    }
+
+    .viewchart-image-div {
+        height: 17rem;
+    }
+
+    .viewchart-div {
+        flex-direction: column;
+    }
+
+    .viewchart-text-div {
+        margin-left: 0;
+    }
+
+    .viewchart-text-div-p1,
+    .viewchart-text-div-p2 {
+        width: 100%;
+    }
+
+    .chart-button {
+        padding: .30rem .50rem;
+    }
 }
