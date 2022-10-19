@@ -15,7 +15,7 @@ import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
 let albumData = [];
 
 const Home = () => {
-  const [page, setPage] = useState("topcharts");
+  const [page, setPage] = useState("home");
   const [albums,setAlbums]=useState([])
   useEffect(() => {
     // const fetchAlbums = async () => {
