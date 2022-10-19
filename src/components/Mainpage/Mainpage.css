@@ -57,6 +57,16 @@
     max-width: 500px;
 }
 
+.top-charts-div {
+    overflow: scroll;
+}
+
+@media(min-width:800.01px) {
+    .top-charts-div {
+        max-height: 40vh;
+    }
+}
+
 @media (max-width:800px) {
     .hero-section {
         width: 100%;
@@ -77,6 +87,5 @@
 
     .top-charts-div {
         display: flex;
-        overflow: scroll;
     }
 }
