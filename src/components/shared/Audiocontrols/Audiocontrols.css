@@ -3,12 +3,6 @@
 .audio-top-controls,
 .volume-control {
     display: flex;
-    /* border: 2px solid yellow; */
-
-}
-
-.audio-player-details {
-    border: 2px solid red;
 }
 
 
@@ -121,6 +115,20 @@ input[type="range"]::-ms-fill-upper {
 }
 
 @media(max-width:800px) {
+    .audio-container {
+        border: 2px solid red;
+        align-items: center;
+    }
+
+    .audio-controls-div {
+        flex: 1;
+    }
+
+    .audio-player-details {
+        border: 2px solid green;
+        flex: 2;
+    }
+
     .mobile-hide {
         display: none;
 
