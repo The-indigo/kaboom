@@ -33,10 +33,26 @@ const Home = () => {
   }, []);
   useLayoutEffect(() => {
     if (page === "topcharts") {
-      document.body.style.backgroundImage = `url(${bg})`;
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundSize = "100% 80vh";
-      document.body.style.backgroundColor = "#1E1E1E";
+      // var getBody = document.querySelector('body');
+      // console.log(getBody)
+      // var bodyAfter = window.getComputedStyle(getBody, "::after");
+      // console.log(bodyAfter)
+    //    content: "";
+    // background: url("/images/lead.png");
+    // background-repeat: no-repeat;
+    // background-size: 100% 80vh;
+    // opacity: 0.2;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
+    // position: absolute;
+    //   z - index: -1;
+      // bodyAfter.style.backgroundColor = "red";
+      // bodyAfter.style.backgroundImage = `url(${bg})`;
+      // document.body.style.backgroundRepeat = "no-repeat";
+      // document.body.style.backgroundSize = "100% 80vh";
+      // document.body.style.backgroundColor = "#1E1E1E";
       // document.body.style.backgroundBlendMode="smooth"
     } else {
       document.body.style.backgroundImage = "none";
@@ -67,6 +83,7 @@ const Home = () => {
       </>
     );
   } else if (page === "topcharts") {
+
     return (
       <>
         <div className="container">
