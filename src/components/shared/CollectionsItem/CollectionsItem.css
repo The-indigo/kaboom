@@ -33,6 +33,10 @@
         width: 11rem;
         height: 12rem;
     }
+
+    .collections-likes {
+        display: none;
+    }
 }
 
 @media (max-width:800px) {
