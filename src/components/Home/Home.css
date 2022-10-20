@@ -28,6 +28,12 @@ body::after {
     display: flex;
     gap: 2rem;
     overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.new-releases::-webkit-scrollbar {
+    display: none;
 }
 
 
