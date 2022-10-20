@@ -51,12 +51,36 @@ input::placeholder {
     color: rgba(255, 255, 255, 0.25);
 }
 
+.mobile-popup-div {
+    background-color: #1E1E1E;
+    height: 100vh;
+    width: 50%;
+    max-width: 250px;
+    position: absolute;
+    top: 0;
+    padding-top: 1rem;
+    padding-left: 1.3rem;
+}
+
+.nav-a-div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.mobile-navigation-icon-div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 @media (min-width:800px) {
     .mobile-menu-icon {
         display: none;
     }
 
-    .nav-a-div {
+    .mobile-popup-div {
         display: none;
     }
 }
@@ -71,25 +95,4 @@ input::placeholder {
         /* position: relative; */
     }
 
-    .mobile-popup-div {
-        background-color: #1E1E1E;
-        height: 100vh;
-        width: 50%;
-        position: absolute;
-        top: 0;
-        padding-top: 1rem;
-    }
-
-    .nav-a-div {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        margin-top: 2.5rem;
-    }
-
-    .mobile-navigation-icon-div {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
 }

@@ -10,6 +10,7 @@ import bg from "./lead.png";
 import Collections from "../Collections/Collections";
 import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
 import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
+import Mobilenav from "../shared/Mobilenav/Mobilenav";
 
 
 let albumData = [];
@@ -100,8 +101,10 @@ const Home = () => {
   } else if (page === "home") {
     return (
       <>
+        <Mobilenav/>
         <div className="container">
           <Search />
+          
           <main className="main">
             <section className="nav-hero-section">
               <Nav homeClick={homeClick} collectionsClick={collectionsClick} />
