@@ -1,19 +1,21 @@
-import React from "react"
+import React, { useState,useEffect } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars} from "@fortawesome/free-solid-svg-icons";
 import "./Mobilenav.css"
-const Mobilenav = () => {
+const Mobilenav = ({ showHideNav, open, navClick }) => {
+ 
     return (
-       <div className="mobile-popup-div">
+        <div className={`mobile-popup-div ${open?"open":null}`}>
          <div className="mobile-nav-logo-bar-div">
 
     <FontAwesomeIcon
             icon={faBars}
             size="2x"
             width={17}
-            className="mobile-menu-icon"
+                    className="mobile-nav-hide"
+                    onClick={showHideNav}
           />
-        <img src="images/logo.png" alt="logo" />
+        <img src="images/logo.png" className="mobile-nav-hide" alt="logo" />
           </div>
           <div className={`nav-a-div`}>
                <div className="mobile-navigation-icon-div" >

@@ -2,7 +2,7 @@ import React from "react"
 import "./Search.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch,faBars} from "@fortawesome/free-solid-svg-icons";
-const Search = () => {
+const Search = ({showHideNav}) => {
     return (
         <>
         <header className="header">
@@ -12,7 +12,8 @@ const Search = () => {
             icon={faBars}
             size="2x"
             width={17}
-            className="mobile-menu-icon"
+              className="mobile-menu-icon"
+              onClick={showHideNav}
           />
         <img src="images/logo.png" alt="logo" />
           </div>

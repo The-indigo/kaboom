@@ -17,7 +17,35 @@ let albumData = [];
 
 const Home = () => {
   const [page, setPage] = useState("home");
-  const [albums,setAlbums]=useState([])
+  const [albums, setAlbums] = useState([])
+   const [navOpen, setNavOpen] = useState(false);
+  const openNav = () => {
+    setNavOpen(!navOpen);
+  };
+  useEffect(() => {
+    let navDiv=document.getElementsByClassName("mobile-popup-div")[0]
+    if (window.innerWidth < 1024) {
+          navOpen == false
+      ? (navDiv.style.visibility =
+              "hidden")
+            
+      : (navDiv.style.visibility =
+              "visible");
+      
+               navOpen == false
+      ? (document.getElementsByClassName("mobile-nav-hide")[0].style.visibility =
+          "hidden")
+      : (document.getElementsByClassName("mobile-nav-hide")[0].style.visibility =
+                       "visible");
+                  navOpen == false
+      ? (document.getElementsByClassName("mobile-nav-hide")[1].style.visibility =
+          "hidden")
+      : (document.getElementsByClassName("mobile-nav-hide")[1].style.visibility =
+              "visible");
+      
+    }
+
+  }, [navOpen]);
   useEffect(() => {
     // const fetchAlbums = async () => {
     //   try {
@@ -72,8 +100,9 @@ const Home = () => {
   if (page === "collections") {
     return (
       <>
+        <Mobilenav showHideNav={openNav}/>
         <div className="container">
-          <Search />
+          <Search showHideNav={openNav}/>
           <main className="main">
             <section className="nav-hero-section">
               <Nav homeClick={homeClick} collectionsClick={collectionsClick} />
@@ -87,8 +116,9 @@ const Home = () => {
 
     return (
       <>
+         <Mobilenav showHideNav={openNav}/>
         <div className="container">
-          <Search />
+             <Search showHideNav={openNav}/>
           <main className="main">
             <section className="nav-hero-section">
               <Nav homeClick={homeClick} collectionsClick={collectionsClick} />
@@ -101,9 +131,9 @@ const Home = () => {
   } else if (page === "home") {
     return (
       <>
-        <Mobilenav/>
+        <Mobilenav showHideNav={openNav}/>
         <div className="container">
-          <Search />
+             <Search showHideNav={openNav}/>
           
           <main className="main">
             <section className="nav-hero-section">
