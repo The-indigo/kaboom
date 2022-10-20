@@ -55,6 +55,10 @@ input::placeholder {
     .mobile-menu-icon {
         display: none;
     }
+
+    .nav-a-div {
+        display: none;
+    }
 }
 
 @media (max-width:800px) {
@@ -64,5 +68,28 @@ input::placeholder {
 
     .header {
         justify-content: space-between;
+        /* position: relative; */
+    }
+
+    .mobile-popup-div {
+        background-color: #1E1E1E;
+        height: 100vh;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        padding-top: 1rem;
+    }
+
+    .nav-a-div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2.5rem;
+    }
+
+    .mobile-navigation-icon-div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 }
