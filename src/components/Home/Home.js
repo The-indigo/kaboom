@@ -25,19 +25,19 @@ const Home = () => {
   useEffect(() => {
     let navDiv=document.getElementsByClassName("mobile-popup-div")[0]
     if (window.innerWidth < 1024) {
-          navOpen == false
+          navOpen === false
       ? (navDiv.style.visibility =
               "hidden")
             
       : (navDiv.style.visibility =
               "visible");
       
-               navOpen == false
+               navOpen === false
       ? (document.getElementsByClassName("mobile-nav-hide")[0].style.visibility =
           "hidden")
       : (document.getElementsByClassName("mobile-nav-hide")[0].style.visibility =
                        "visible");
-                  navOpen == false
+                  navOpen === false
       ? (document.getElementsByClassName("mobile-nav-hide")[1].style.visibility =
           "hidden")
       : (document.getElementsByClassName("mobile-nav-hide")[1].style.visibility =
@@ -89,18 +89,23 @@ const Home = () => {
   }, [page]);
   const homeClick = () => {
     setPage("home");
+    setNavOpen(false)
   };
   const collectionsClick = () => {
     setPage("collections");
+        setNavOpen(false)
+
   };
   const topChartsClick = () => {
     setPage("topcharts");
+        setNavOpen(false)
+
   };
 
   if (page === "collections") {
     return (
       <>
-        <Mobilenav showHideNav={openNav}/>
+        <Mobilenav showHideNav={openNav} homeClick={ homeClick} collectionsClick={collectionsClick} />
         <div className="container">
           <Search showHideNav={openNav}/>
           <main className="main">
@@ -116,7 +121,7 @@ const Home = () => {
 
     return (
       <>
-         <Mobilenav showHideNav={openNav}/>
+        <Mobilenav showHideNav={openNav} homeClick={ homeClick} collectionsClick={collectionsClick} />
         <div className="container">
              <Search showHideNav={openNav}/>
           <main className="main">
@@ -131,7 +136,7 @@ const Home = () => {
   } else if (page === "home") {
     return (
       <>
-        <Mobilenav showHideNav={openNav}/>
+        <Mobilenav showHideNav={openNav} homeClick={ homeClick} collectionsClick={collectionsClick} />
         <div className="container">
              <Search showHideNav={openNav}/>
           

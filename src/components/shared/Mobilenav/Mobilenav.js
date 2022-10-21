@@ -1,8 +1,8 @@
-import React, { useState,useEffect } from "react"
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars} from "@fortawesome/free-solid-svg-icons";
 import "./Mobilenav.css"
-const Mobilenav = ({ showHideNav, open, navClick }) => {
+const Mobilenav = ({ showHideNav, open, homeClick,collectionsClick }) => {
  
     return (
         <div className={`mobile-popup-div ${open?"open":null}`}>
@@ -18,11 +18,11 @@ const Mobilenav = ({ showHideNav, open, navClick }) => {
         <img src="images/logo.png" className="mobile-nav-hide" alt="logo" />
           </div>
           <div className={`nav-a-div`}>
-               <div className="mobile-navigation-icon-div" >
+               <div className="mobile-navigation-icon-div"  onClick={homeClick}>
               <img src="images/home.png" alt="home icon" />
               <span className="mobile-navigation-text">Home</span>
           </div>
-          <div className="mobile-navigation-icon-div" >
+          <div className="mobile-navigation-icon-div" onClick={collectionsClick}>
               <img src="images/playlist.png" alt="collections icon" />
             <span className="mobile-navigation-text">My collections</span>
           </div>
