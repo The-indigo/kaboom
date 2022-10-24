@@ -1,24 +1,27 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useLayoutEffect, useState,useRef } from "react";
+// import axios from "axios";
 
 import "./Home.css";
 import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
 import Nav from "../shared/Nav/Nav";
 import Mainpage from "../Mainpage/Mainpage";
-import bg from "./lead.png";
+// import bg from "./lead.png";
 import Collections from "../Collections/Collections";
 import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
 import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
 import Mobilenav from "../shared/Mobilenav/Mobilenav";
+import gsap from "gsap";
 
 
-let albumData = [];
+// let albumData = [];
 
 const Home = () => {
   const [page, setPage] = useState("home");
   const [albums, setAlbums] = useState([])
    const [navOpen, setNavOpen] = useState(false);
+     const collectionsRef=useRef()
+
   const openNav = () => {
     setNavOpen(!navOpen);
   };
@@ -46,6 +49,7 @@ const Home = () => {
     }
 
   }, [navOpen]);
+
   useEffect(() => {
     // const fetchAlbums = async () => {
     //   try {
@@ -60,6 +64,8 @@ const Home = () => {
     // };
     // fetchAlbums();
   }, []);
+
+
   useLayoutEffect(() => {
     if (page === "topcharts") {
       // var getBody = document.querySelector('body');
@@ -83,7 +89,17 @@ const Home = () => {
       // document.body.style.backgroundSize = "100% 80vh";
       // document.body.style.backgroundColor = "#1E1E1E";
       // document.body.style.backgroundBlendMode="smooth"
-    } else {
+    } else if (page === "collections") {
+        let ctx = gsap.context(() => {
+            gsap.from(".collections-component-div", {
+                opacity: 0,
+                ease:"power1.in",
+                duration:2.5
+           })
+        }, collectionsRef) 
+        return () => ctx.revert();
+  }  
+    else {
       document.body.style.backgroundImage = "none";
     }
   }, [page]);
@@ -102,11 +118,12 @@ const Home = () => {
 
   };
 
+
   if (page === "collections") {
     return (
-      <>
+      <div ref={collectionsRef}>
         <Mobilenav showHideNav={openNav} homeClick={ homeClick} collectionsClick={collectionsClick} />
-        <div className="container">
+        <div className="container collections-component-div" >
           <Search showHideNav={openNav}/>
           <main className="main">
             <section className="nav-hero-section">
@@ -115,7 +132,7 @@ const Home = () => {
             </section>
           </main>
         </div>
-      </>
+      </div> 
     );
   } else if (page === "topcharts") {
 

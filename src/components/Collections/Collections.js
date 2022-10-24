@@ -4,7 +4,7 @@ import "./Collections.css";
 
 const Collections = () => {
     return (
-        <div>
+        <div className="col">
             <section className="collections-sections">
                 <div className="collections-button">
                     <p>My collection</p>
@@ -15,6 +15,15 @@ const Collections = () => {
             </section>
 
             <section className="collections-image-section">
+                <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/blind.png"} name="Limits" artist={"John Watts"} />
+                    <CollectionsItem imageSource={"images/black.png"} name="Limits" artist={"John Watts"}/>
+
+    <CollectionsItem imageSource={"images/sun.png"} name="Limits" artist={"John Watts"}/>
+                    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
+                <CollectionsItem imageSource={"images/alpha.png"} name="Limits" artist={"John Watts"} />
+                
                 <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
                 <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
                 <CollectionsItem imageSource={"images/blind.png"} name="Limits" artist={"John Watts"} />

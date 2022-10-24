@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import "./Viewchartoralbum.css"
 import AlbumChart from '../shared/AlbumChart/AlbumChart';
 
