@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from "react";
 // import axios from "axios";
 
 import "./Home.css";
@@ -11,6 +11,7 @@ import Collections from "../Collections/Collections";
 import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
 import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
 import Mobilenav from "../shared/Mobilenav/Mobilenav";
+import { MusicContext } from "../../store/musicContext";
 import gsap from "gsap";
 
 // let albumData = [];
@@ -21,9 +22,17 @@ const Home = () => {
   const [navOpen, setNavOpen] = useState(false);
   const collectionsRef = useRef();
 
+  // mobile navigation toggle
   const openNav = () => {
     setNavOpen(!navOpen);
   };
+  const musicContext = useContext(MusicContext)
+
+  const pickMusic = (data) => {
+        musicContext.pickMusic(data)
+      }
+
+  
   useEffect(() => {
     let navDiv = document.getElementsByClassName("mobile-popup-div")[0];
     if (window.innerWidth < 1024) {
@@ -180,16 +189,26 @@ const Home = () => {
             <section>
               <h1>New releases</h1>
               <div className="new-releases">
+                                {musicContext.musicList.map((e) => (
+                  <Newreleases key={e.url} pickMusic={()=>pickMusic(e)}
+                    imageSource={
+                                      e.url
+                                    }
+                                    releaseTitle={
+                                     e.name
+                                    }
+                  />
+                ))}
                 {/* console.log(albumData.albums[0]) */}
-                {albums.map((e) => (
+                {/* {albums.map((e) => (
                   <Newreleases
                     imageSource={
                       e.images[1].url ? e.images[1].url : "images/face.png"
                     }
                     releaseTitle={e.name ? e.name : "Mountain"}
                   />
-                ))}
-                <Newreleases
+                ))} */}
+                {/* <Newreleases
                   imageSource={"images/alpha.png"}
                   releaseTitle={"Life in a bubble"}
                 />
@@ -233,7 +252,7 @@ const Home = () => {
                 <Newreleases
                   imageSource={"images/sun.png"}
                   releaseTitle={"Here again"}
-                />
+                /> */}
               </div>
             </section>
           </main>

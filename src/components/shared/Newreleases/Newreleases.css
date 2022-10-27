@@ -1,5 +1,6 @@
 .new-releases-div {
     text-align: start;
+    cursor: pointer;
     /* border: 2px solid red; */
 }
 
