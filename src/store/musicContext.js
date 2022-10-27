@@ -4,21 +4,23 @@ const data = [
     {
     url: "images/face.png",
     name:"Mountain",
+    artist:"burna"
     },
         {
     url: "images/alpha.png",
     name:"Life in a bubble",
+     artist:"burna"
     },
             {
     url: "images/mountain.png",
     name:"Mountain",
+     artist:"burna"
 },
 ]
 
 
 export const MusicContext = createContext({
     musicList: [],
-    
     isPlaying: false,
 pickedMusic:{},
     // setMusicItems:()=>{},
@@ -31,7 +33,8 @@ const MusicContextProvider = ({ children }) => {
     
       useEffect(() => {
      const setMusicItems = () => {
-        setMusicList(data);
+         setMusicList(data);
+         setPickedMusic(data[0])
         console.log("music set.....")
      }
           setMusicItems()

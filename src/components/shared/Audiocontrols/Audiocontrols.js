@@ -1,20 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./Audiocontrols.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh} from "@fortawesome/free-solid-svg-icons";
+import { MusicContext } from "../../../store/musicContext";
 const Audiocontrols = () => {
+  const musicContext = useContext(MusicContext)
+  console.log(musicContext.pickedMusic)
     return (
         <div className="audio-div">
            <div className="container audio-container">
 
         
           <div className="audio-player-details">
-        <div className="audio-image-div"> 
-            <img src="images/face.png"/>
+            <div className="audio-image-div"> 
+            {musicContext.pickedMusic?<img src= {musicContext.pickedMusic.url}/> :null}
             </div>
             <div className="audio-text-div">
-              <p>Seasons in</p>
-              <p>James</p>
+              <p>{musicContext.pickedMusic?musicContext.pickedMusic.name:null}</p>
+              <p>{musicContext.pickedMusic?musicContext.pickedMusic.artist:null}</p>
             </div>
           </div>
 
