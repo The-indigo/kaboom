@@ -94,7 +94,7 @@ const Home = () => {
             gsap.from(".collections-component-div", {
               opacity: 0,
                 ease:"power1.in",
-                duration:2.5
+                duration:2.3
            })
         }, collectionsRef) 
         return () => ctx.revert();
@@ -132,6 +132,7 @@ const Home = () => {
             </section>
           </main>
         </div>
+        <Audiocontrols/>
       </div> 
     );
   } else if (page === "topcharts") {
@@ -148,6 +149,8 @@ const Home = () => {
             </section>
           </main>
         </div>
+                <Audiocontrols/>
+
       </>
     );
   } else if (page === "home") {
@@ -223,9 +226,9 @@ const Home = () => {
             
           </main>
         </div>
-        <div className="audio-div">
+        {/* <div className="audio-div"> */}
        <Audiocontrols/>
-        </div>
+        {/* </div> */}
       </>
     );
   }

@@ -13,6 +13,11 @@
     border-radius: 5rem;
 }
 
+.collections-button-active {
+    background-color: #FACD66;
+    color: #1D2123;
+}
+
 .collections-button p {
     margin: 0;
     font-size: .8rem;

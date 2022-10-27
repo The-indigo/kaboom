@@ -6,7 +6,7 @@ const Collections = () => {
     return (
         <div className="col">
             <section className="collections-sections">
-                <div className="collections-button">
+                <div className="collections-button collections-button-active">
                     <p>My collection</p>
                 </div>
                  <div className="collections-button">

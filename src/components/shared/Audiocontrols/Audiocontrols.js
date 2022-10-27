@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh} from "@fortawesome/free-solid-svg-icons";
 const Audiocontrols = () => {
     return (
-        <>
+        <div className="audio-div">
            <div className="container audio-container">
 
         
@@ -78,7 +78,7 @@ const Audiocontrols = () => {
           src={""}
           // ref={""}
         ></audio>
-        </>
+        </div>
     )
 }
 export default Audiocontrols
