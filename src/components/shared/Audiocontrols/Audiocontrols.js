@@ -31,13 +31,16 @@ const Audiocontrols = () => {
             size="1x"
             width={11}
             className="audio-icon"
-                />
-                         <FontAwesomeIcon
+              />
+              <div className="play-icon">
+  <FontAwesomeIcon
             icon={faPlay}
-            size="1x"
+                size="1x"
             width={11}
             className="audio-icon audio-icon-play"
               />
+              </div>
+                       
                     <FontAwesomeIcon
             icon={faForwardStep}
             size="1x"

@@ -5,6 +5,17 @@
     display: flex;
 }
 
+.play-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FACD66;
+    width: 1rem;
+    height: 1rem;
+    padding: .1rem;
+    margin: 0;
+    border-radius: 50%;
+}
 
 
 .audio-image-div {

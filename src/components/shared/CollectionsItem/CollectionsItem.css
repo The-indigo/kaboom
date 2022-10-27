@@ -34,10 +34,10 @@
 
 
 @media (min-width:800.01px) {
-    .collections {
+    /* .collections {
         /* width: 11rem;
         height: 12rem; */
-    }
+    /* } */
 }
 
 @media (max-width:500px) {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./TopchartItem.css";
-const TopchartItem = ({imageSource,trackName,tarckArtist,trackTime,onClick}) => {
+const TopchartItem = ({imageSource,trackName,tarckArtist,trackTime,onClick,addToCollections}) => {
     return (
         
         <div className="top-charts-item" onClick={onClick}>
@@ -16,7 +16,7 @@ const TopchartItem = ({imageSource,trackName,tarckArtist,trackTime,onClick}) => 
                       </div>
             </div>
    
-                      <div className="heart-div"> 
+                      <div className="heart-div" onClick={addToCollections}> 
                            <img src="images/heart.png" alt="heart icon"/>
                 </div>
                 </div>

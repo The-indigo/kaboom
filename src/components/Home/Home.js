@@ -92,7 +92,7 @@ const Home = () => {
     } else if (page === "collections") {
         let ctx = gsap.context(() => {
             gsap.from(".collections-component-div", {
-                opacity: 0,
+              opacity: 0,
                 ease:"power1.in",
                 duration:2.5
            })
@@ -127,7 +127,7 @@ const Home = () => {
           <Search showHideNav={openNav}/>
           <main className="main">
             <section className="nav-hero-section">
-              <Nav homeClick={homeClick} collectionsClick={collectionsClick} />
+              <Nav homeClick={homeClick} collectionsClick={collectionsClick} page={page} />
               <Collections />
             </section>
           </main>
@@ -159,7 +159,7 @@ const Home = () => {
           
           <main className="main">
             <section className="nav-hero-section">
-              <Nav homeClick={homeClick} collectionsClick={collectionsClick} />
+              <Nav homeClick={homeClick} collectionsClick={collectionsClick} page={page } />
               <Mainpage topChartsClick={topChartsClick} />
             </section>
            

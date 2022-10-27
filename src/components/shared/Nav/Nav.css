@@ -16,6 +16,10 @@
     margin-bottom: 2rem;
 }
 
+.navigation-icon-div {
+    cursor: pointer;
+}
+
 @media (max-width:800px) {
     .navigation {
         display: none;

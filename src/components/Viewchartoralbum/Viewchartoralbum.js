@@ -28,7 +28,7 @@ const Viewchartoralbum = () => {
                             <img src="images/heartred.png" alt="heart icon" />
                     <p>Like</p>
                 </div>
-                  <div className="like-button chart-button mobile-hide"> 
+                  <div className="like-button chart-button hide"> 
                             <img src="images/heartred.png" alt="heart icon" />
                 </div>
                 </div>
