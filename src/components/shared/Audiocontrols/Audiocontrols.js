@@ -7,14 +7,14 @@ const Audiocontrols = () => {
   const musicContext = useContext(MusicContext)
 
 
-//   const playMusic = () => {
-//     // const msDuration = 179232
-//     musicContext.playMusic(document.querySelector('audio'))
+  const playMusic = () => {
+    // const msDuration = 179232
+    // musicContext.playMusic(document.querySelector('audio'))
 
-//   }
-//   const handleDurationChange = (e) => {
+  }
+  const handleDurationChange = (e) => {
 // musicContext.handleDurationChange(document.querySelector('audio'))
-//   }
+  }
     return (
         <div className="audio-div">
            <div className="container audio-container">
