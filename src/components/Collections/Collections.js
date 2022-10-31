@@ -18,20 +18,11 @@ const Collections = () => {
                 <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
                 <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
                 <CollectionsItem imageSource={"images/blind.png"} name="Limits" artist={"John Watts"} />
-                    <CollectionsItem imageSource={"images/black.png"} name="Limits" artist={"John Watts"}/>
+                <CollectionsItem imageSource={"images/sun.png"} name="Limits" artist={"John Watts"} />
+                     <CollectionsItem imageSource={"images/ink.png"} name="Limits" artist={"John Watts"} />
+                    <CollectionsItem imageSource={"images/face.png"} name="Limits" artist={"John Watts"}/>
 
-    <CollectionsItem imageSource={"images/sun.png"} name="Limits" artist={"John Watts"}/>
-                    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
-                <CollectionsItem imageSource={"images/alpha.png"} name="Limits" artist={"John Watts"} />
-                
-                <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
-                <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
-                <CollectionsItem imageSource={"images/blind.png"} name="Limits" artist={"John Watts"} />
-                    <CollectionsItem imageSource={"images/black.png"} name="Limits" artist={"John Watts"}/>
-
-    <CollectionsItem imageSource={"images/sun.png"} name="Limits" artist={"John Watts"}/>
-                    <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"}/>
-                <CollectionsItem imageSource={"images/alpha.png"} name="Limits" artist={"John Watts"} />
+            
             </section>
         </div>
     )
