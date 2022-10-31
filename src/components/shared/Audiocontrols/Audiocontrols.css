@@ -15,8 +15,12 @@
     padding: .1rem;
     margin: 0;
     border-radius: 50%;
+    cursor: pointer;
 }
 
+.audio-icon {
+    cursor: pointer;
+}
 
 .audio-image-div {
     height: 2.5rem;

@@ -26,13 +26,15 @@ pickedMusic:{},
     // setMusicItems:()=>{},
     pickMusic: (data) => { },
     duration: 0,
-    handleDurationChange:()=>{}
+    handleDurationChange:()=>{},
+    playMusic:()=>{}
 })
 
 const MusicContextProvider = ({ children }) => {
     const [musicList, setMusicList] = useState([]);
     const [pickedMusic, setPickedMusic] = useState();
     const [duration, setDuration] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
     
       useEffect(() => {
      const setMusicItems = () => {
@@ -47,16 +49,28 @@ const MusicContextProvider = ({ children }) => {
         setPickedMusic(data)
         console.log(data);
     }
-    const handleDurationChange = (e) => {
-        setDuration(e)
+    const playMusic = (audio) => {
+        setIsPlaying(!isPlaying)
+        
+        if (isPlaying === false) {
+            audio.play()
+        } else {
+            audio.pause()
+        }
+        handleDurationChange(audio)
+    }
+    const handleDurationChange = (audio) => {
+        setDuration(audio.currentTime)
     }
 
       const value = {
           musicList: musicList,
-           pickedMusic:pickedMusic,
+          pickedMusic: pickedMusic,
+           isPlaying:isPlaying,
           pickMusic: pickMusic,
           duration: duration,
-          handleDurationChange
+          handleDurationChange,
+          playMusic
         //   setMusicItems:setMusicItems
          
       };

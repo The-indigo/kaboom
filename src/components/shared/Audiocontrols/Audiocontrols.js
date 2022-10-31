@@ -1,19 +1,20 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import "./Audiocontrols.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh} from "@fortawesome/free-solid-svg-icons";
+import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh,faPause} from "@fortawesome/free-solid-svg-icons";
 import { MusicContext } from "../../../store/musicContext";
 const Audiocontrols = () => {
   const musicContext = useContext(MusicContext)
 
-  const playMusic = () => {
-    // const msDuration = 179232
-    const audio = document.querySelector('audio');
-    audio.play();
-  }
-  const handleDurationChange = (e) => {
-    musicContext.handleDurationChange(e.target.value)
-  }
+
+//   const playMusic = () => {
+//     // const msDuration = 179232
+//     musicContext.playMusic(document.querySelector('audio'))
+
+//   }
+//   const handleDurationChange = (e) => {
+// musicContext.handleDurationChange(document.querySelector('audio'))
+//   }
     return (
         <div className="audio-div">
            <div className="container audio-container">
@@ -45,7 +46,7 @@ const Audiocontrols = () => {
               />
               <div className="play-icon" onClick={playMusic}>
   <FontAwesomeIcon
-            icon={faPlay}
+            icon= {musicContext.isPlaying===false?faPlay:faPause} 
                 size="1x"
             width={11}
             className="audio-icon audio-icon-play"
@@ -67,10 +68,11 @@ const Audiocontrols = () => {
           />
             </div>
                  <div className="audio-bottom-controls mobile-hide">
-                        <input type={"range"}
-                min="0" value={musicContext.duration} max="30"
-                onChange={handleDurationChange}
-                        />
+                        <input type={"range"} id="slider-value"
+                min="0"  max="30" value={musicContext.duration}
+                onChange={handleDurationChange } step="1"
+              />
+              {musicContext.duration}
             </div>
             </div>
             <div className="audio-volume-controls volume-control mobile-hide">
