@@ -1,20 +1,36 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import "./Audiocontrols.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh,faPause} from "@fortawesome/free-solid-svg-icons";
 import { MusicContext } from "../../../store/musicContext";
 const Audiocontrols = () => {
   const musicContext = useContext(MusicContext)
+  const [val, setVal] = useState(0);
+
+  const handleDurationChange = (e) => {
+  setVal(MusicContext.duration)
+}
+
+  useEffect(() => {
+    
+  },[])
+  
 
 
   const playMusic = () => {
-    // const msDuration = 179232
-    // musicContext.playMusic(document.querySelector('audio'))
+    const msDuration = 179232
+    musicContext.playMusic()
+  }
+  // useEffect(() => {
 
-  }
-  const handleDurationChange = (e) => {
-// musicContext.handleDurationChange(document.querySelector('audio'))
-  }
+  // },[musicContext.isPlaying])
+//   const handleDurationChange = (e) => {
+//     // setVal(musicContext.duration);
+// // musicContext.handleDurationChange(document.querySelector('audio'))
+//   }
+
+  
+
     return (
         <div className="audio-div">
            <div className="container audio-container">

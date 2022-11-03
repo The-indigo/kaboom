@@ -29,38 +29,57 @@ pickedMusic:{},
     handleDurationChange:()=>{},
     playMusic:()=>{}
 })
-
+ let ad;
 const MusicContextProvider = ({ children }) => {
     const [musicList, setMusicList] = useState([]);
     const [pickedMusic, setPickedMusic] = useState();
     const [duration, setDuration] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
+
+   
     
-      useEffect(() => {
+    useEffect(() => {
+    ad = document.querySelector('audio');
      const setMusicItems = () => {
          setMusicList(data);
          setPickedMusic(data[0])
-        console.log("music set.....")
+         console.log(ad);
+         console.log(ad.currentTime)
      }
           setMusicItems()
-  },[])
+      }, [])
+
+    useEffect(() => {
+        if (isPlaying) {
+            setTimeout(() => {
+            setDuration(ad.currentTime)    
+            },900)
+            
+            console.log(duration)
+            console.log(ad.currentTime)
+        }
+    })
+  
    
     const pickMusic = (data) => {
         setPickedMusic(data)
-        console.log(data);
     }
-    const playMusic = (audio) => {
+   
+    const playMusic = () => {
         setIsPlaying(!isPlaying)
         
         if (isPlaying === false) {
-            audio.play()
+            ad.play();
+            // setDuration(audio.currentTime);
+            console.log(ad.currentTime)
         } else {
-            audio.pause()
+            ad.pause()
         }
-        handleDurationChange(audio)
+        // handleDurationChange(audio)
     }
+
     const handleDurationChange = (audio) => {
-        setDuration(audio.currentTime)
+        // setDuration(audio.currentTime)
     }
 
       const value = {
