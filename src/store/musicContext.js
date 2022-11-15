@@ -15,17 +15,23 @@ export const MusicContext = createContext({
   handleDurationChange: () => {},
   playMusic: () => {},
 });
+let ad;
 const MusicContextProvider = ({ children }) => {
   const [musicList, setMusicList] = useState([]);
     const [pickedMusic, setPickedMusic] = useState();
     const [pickedTrack, setPickedTrack] = useState();
   const [duration, setDuration] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    let ad=document.querySelector("audio");
+   
 
-  useEffect(() => {
-    // ad = document.querySelector("audio");
 
+    useEffect(() => {
+        ad = document.querySelector("audio");
+        ad.value = 0;
+        setIsPlaying(false)
+    },[pickedTrack])
+
+    useEffect(() => {
     const fetchAlbums = async () => {
       const getAlbumoptions = {
         method: "GET",
@@ -43,32 +49,32 @@ const MusicContextProvider = ({ children }) => {
         const response = await axios.request(getAlbumoptions);
         if (response.data && response.status === 200) {
           data = response.data.albums;
-          setMusicList(response.data.albums);
+            setMusicList(response.data.albums);
+            console.log("it fetched again/.....")
         }
       } catch (error) {
         console.error(error);
       }
     };
-
-    const setMusicItems = () => {
-      fetchAlbums();
+     fetchAlbums();
+    // const setMusicItems = () => {
+ 
 // console.log(data)
       //  setMusicList(data);
     //   setPickedMusic(data[0]);
       //  console.log(ad);
       //  console.log(ad.currentTime)
-    };
-    setMusicItems();
+    // };
+    // setMusicItems();
   }, []);
 
-  useEffect(() => {
-    if (isPlaying) {
+    useEffect(() => {
+        if (isPlaying) {
+        
       setTimeout(() => {
         setDuration(ad.currentTime);
       }, 1000);
 
-    //   console.log(duration);
-    //   console.log(ad.currentTime);
     }
   });
 
@@ -80,7 +86,8 @@ const MusicContextProvider = ({ children }) => {
         console.log(data)
     }
 
-  const playMusic = (src) => {
+  const playMusic = () => {
+     
       setIsPlaying(!isPlaying);
       if (isPlaying === false) {
         //   ad.play()
@@ -93,15 +100,11 @@ const MusicContextProvider = ({ children }) => {
                 console.log(error,"error")
             })
         }
-    } else {
+      } else {
+          console.log("did this pause it")
       ad.pause();
     }
-    // handleDurationChange(audio)
   };
-
-//   const handleDurationChange = (audio) => {
-//     // setDuration(audio.currentTime)
-//   };
 
   const value = {
     musicList: musicList,

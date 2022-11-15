@@ -6,31 +6,26 @@ import { MusicContext } from "../../../store/musicContext";
 const Audiocontrols = () => {
   const musicContext = useContext(MusicContext)
   const [val, setVal] = useState(0);
-  // const [m, setM] = useState({});
 
   const handleDurationChange = (e) => {
   setVal(MusicContext.duration)
 }
 
   const playMusic = () => {
-    const msDuration = 179232
-    musicContext.playMusic(musicContext.pickedTrack.preview_url)
-     
+    musicContext.playMusic()
   }
-  // useEffect(() => {
-  //   if (musicContext.pickedTrack) {
-  //      setM(musicContext.pickedTrack)
-  //   console.log(m.preview_url);
-  //   }
-   
-  // },[musicContext.pickedTrack])
+
 
     return (
         <div className="audio-div">
            <div className="container audio-container">
           <div className="audio-player-details">
             <div className="audio-image-div"> 
-            {musicContext.pickedTrack?<img src= {musicContext.pickedMusic.images[2].url}/> :null}
+              {musicContext.pickedTrack && musicContext.pickedTrack.artists[0].id
+                === musicContext.pickedMusic.artists[0].id ?
+                <img src={musicContext.pickedMusic.images[2].url} /> :
+                
+                null}
             </div>
             <div className="audio-text-div">
               <p>{musicContext.pickedTrack?musicContext.pickedTrack.name:null}</p>
