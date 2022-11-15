@@ -6,43 +6,35 @@ import { MusicContext } from "../../../store/musicContext";
 const Audiocontrols = () => {
   const musicContext = useContext(MusicContext)
   const [val, setVal] = useState(0);
+  // const [m, setM] = useState({});
 
   const handleDurationChange = (e) => {
   setVal(MusicContext.duration)
 }
 
-  useEffect(() => {
-    
-  },[])
-  
-
-
   const playMusic = () => {
     const msDuration = 179232
-    musicContext.playMusic()
+    musicContext.playMusic(musicContext.pickedTrack.preview_url)
+     
   }
   // useEffect(() => {
-
-  // },[musicContext.isPlaying])
-//   const handleDurationChange = (e) => {
-//     // setVal(musicContext.duration);
-// // musicContext.handleDurationChange(document.querySelector('audio'))
-//   }
-
-  
+  //   if (musicContext.pickedTrack) {
+  //      setM(musicContext.pickedTrack)
+  //   console.log(m.preview_url);
+  //   }
+   
+  // },[musicContext.pickedTrack])
 
     return (
         <div className="audio-div">
            <div className="container audio-container">
-
-        
           <div className="audio-player-details">
             <div className="audio-image-div"> 
-            {musicContext.pickedMusic?<img src= {musicContext.pickedMusic.url}/> :null}
+            {musicContext.pickedTrack?<img src= {musicContext.pickedMusic.images[2].url}/> :null}
             </div>
             <div className="audio-text-div">
-              <p>{musicContext.pickedMusic?musicContext.pickedMusic.name:null}</p>
-              <p>{musicContext.pickedMusic?musicContext.pickedMusic.artist:null}</p>
+              <p>{musicContext.pickedTrack?musicContext.pickedTrack.name:null}</p>
+              <p>{musicContext.pickedTrack?musicContext.pickedTrack.artists[0].name:null}</p>
             </div>
           </div>
 
@@ -65,7 +57,6 @@ const Audiocontrols = () => {
             icon= {musicContext.isPlaying===false?faPlay:faPause} 
                 size="1x"
             width={11}
-            // className="audio-icon audio-icon-play"
               />
               </div>
                        
@@ -88,7 +79,7 @@ const Audiocontrols = () => {
                 min="0"  max="30" value={musicContext.duration}
                 onChange={handleDurationChange } step="1"
               />
-              {musicContext.duration}
+              {/* {musicContext.duration} */}
             </div>
             </div>
             <div className="audio-volume-controls volume-control mobile-hide">
@@ -103,13 +94,15 @@ const Audiocontrols = () => {
                         
                     />
             </div>
-              </div>
-        <audio id="audio-player">
-          <source
-                   src={"https://p.scdn.co/mp3-preview/315b151078df729934712ed1cc21e11506c64017?cid=f6a40776580943a7bc5173125a1e8832"}
-
-       ></source>
-          // ref={""}
+        </div>
+                {/* src={"https://p.scdn.co/mp3-preview/315b151078df729934712ed1cc21e11506c64017?cid=f6a40776580943a7bc5173125a1e8832"} */}
+        <audio id="audio-player" src={musicContext.pickedTrack?`${musicContext.pickedTrack.preview_url}`:''}
+>
+          {/* <source
+            
+            // src={musicContext.pickedTrack?musicContext.pickedTrack.preview_url:''}
+       ></source> */}
+           {/* ref={""} */}
         </audio>
         </div>
     )

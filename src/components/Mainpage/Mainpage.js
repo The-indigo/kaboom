@@ -1,7 +1,7 @@
 import React from "react";
 import TopchartItem from "../shared/Topcharts/TopchartItem";
 import "./Mainpage.css";
-const Mainpage = ({topChartsClick}) => {
+const Mainpage = ({}) => {
     return (
         <>
             <div className="hero-section">
@@ -45,20 +45,25 @@ const Mainpage = ({topChartsClick}) => {
             <h1>Top Charts</h1>
             <div className="top-charts-div">
             <TopchartItem imageSource={"images/face.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"} onClick={ topChartsClick}
+              trackTime={"2:34:45"}
+              // onClick={topChartsClick}
               />
                         <TopchartItem imageSource={"images/fly.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"} onClick={ topChartsClick}
+              trackTime={"2:34:45"}
+              // onClick={topChartsClick}
               />
                         <TopchartItem imageSource={"images/lead.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"} onClick={ topChartsClick}
+              trackTime={"2:34:45"}
+              // onClick={topChartsClick}
               />
 
                         <TopchartItem imageSource={"images/fly.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"} onClick={ topChartsClick}
+              trackTime={"2:34:45"}
+              // onClick={topChartsClick}
               />
                         <TopchartItem imageSource={"images/lead.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"} onClick={ topChartsClick}
+              trackTime={"2:34:45"}
+              // onClick={topChartsClick}
               />
 
             </div>

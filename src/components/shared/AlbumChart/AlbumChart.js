@@ -3,23 +3,29 @@ import "./AlbumChart.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical} from "@fortawesome/free-solid-svg-icons";
 
-const AlbumChart = () => {
+const AlbumChart = ({imageSource,trackName,type,time,pick}) => {
     return (
-                     <div className='track-playlist'>
+                     <div onClick={pick} className='track-playlist'>
                     <div className='track-playlist-images'>
                   <div className='track-playlist-img-div'>
-                        <img src="images/face.png" alt="album cover art"/>
+                        <img src={imageSource} alt="album cover art"/>
                     </div>
                     <div>
 <img src='images/heartgrey.png' alt="grey heart icon"/>
                     </div>
                     </div>
   
-                    <div>
-                        <p>Let me love you-Krisx</p>
-                    </div>
-                    <p>Single</p>
-                    <p>4:17</p>
+                    <div className="trackname">
+                <p>{trackName}</p>
+            </div>
+            <div className="tracktype">
+<p>{ type}</p>
+            </div>
+            <div className="tracktime">
+    <p>{ time}</p>
+            </div>
+            
+
                             <FontAwesomeIcon
             icon={faEllipsisVertical}
             size="1x"

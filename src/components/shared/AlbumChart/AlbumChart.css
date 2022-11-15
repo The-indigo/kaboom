@@ -12,6 +12,15 @@
 
 }
 
+
+
+
+
+.trackname {
+    width: 30%;
+    max-width: 250px;
+}
+
 .track-playlist-images {
     display: flex;
     align-items: center;

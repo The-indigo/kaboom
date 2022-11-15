@@ -27,11 +27,6 @@ const Home = () => {
     setNavOpen(!navOpen);
   };
   const musicContext = useContext(MusicContext)
-
-  const pickMusic = (data) => {
-        musicContext.pickMusic(data)
-      }
-
   
   useEffect(() => {
     let navDiv = document.getElementsByClassName("mobile-popup-div")[0];
@@ -105,7 +100,14 @@ const Home = () => {
       }, collectionsRef);
       return () => ctx.revert();
     } else {
-      document.body.style.backgroundImage = "none";
+          let ctx = gsap.context(() => {
+        gsap.from(".home-component-div", {
+          opacity: 0,
+          ease: "power1.in",
+          duration: 2.25,
+        });
+      }, collectionsRef);
+      return () => ctx.revert();
     }
   }, [page]);
   const homeClick = () => {
@@ -120,6 +122,11 @@ const Home = () => {
     setPage("topcharts");
     setNavOpen(false);
   };
+    const pickMusic = (data) => {
+      musicContext.pickMusic(data)
+      topChartsClick()
+    
+      }
 
   if (page === "collections") {
     return (
@@ -158,7 +165,7 @@ const Home = () => {
           <main className="main">
             <section className="nav-hero-section">
               <Nav homeClick={homeClick} collectionsClick={collectionsClick} />
-              <Viewchartoralbum />
+              <Viewchartoralbum  />
             </section>
           </main>
         </div>
@@ -167,13 +174,13 @@ const Home = () => {
     );
   } else if (page === "home") {
     return (
-      <>
+      <div ref={collectionsRef}>
         <Mobilenav
           showHideNav={openNav}
           homeClick={homeClick}
           collectionsClick={collectionsClick}
         />
-        <div className="container">
+        <div className="container home-component-div">
           <Search showHideNav={openNav} />
 
           <main className="main">
@@ -190,9 +197,10 @@ const Home = () => {
               <h1>New releases</h1>
               <div className="new-releases">
                                 {musicContext.musicList.map((e) => (
-                  <Newreleases key={e.url} pickMusic={()=>pickMusic(e)}
+                                  <Newreleases key={e.id}
+                                    pickMusic={() => pickMusic(e)}
                     imageSource={
-                                      e.url
+                                     e.images[1].url ? e.images[1].url : "images/face.png"
                                     }
                                     releaseTitle={
                                      e.name
@@ -260,7 +268,7 @@ const Home = () => {
         {/* <div className="audio-div"> */}
         <Audiocontrols />
         {/* </div> */}
-      </>
+      </div>
     );
   }
 };
