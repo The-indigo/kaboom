@@ -33,7 +33,7 @@ const Viewchartoralbum = () => {
                             <img src='images/musicadd.png' alt='add music icon'/>
                     <p>Add to collection</p>
                         </div>
-                            <div className="add-button chart-button">
+                            <div className="add-button chart-button desktop-hide">
                             <img src="images/heartred.png" alt="heart icon" />
                     <p>Like</p>
                 </div>
@@ -48,15 +48,6 @@ const Viewchartoralbum = () => {
                     <AlbumChart key={e.id} pick={() => {
                         musicContext.pickTrack(e)
                     }} imageSource={musicContext.pickedMusic.images[2].url} trackName={e.name} type={e.type} time={millisToMinutesAndSeconds(e.duration_ms) } />
-                //                   <Newreleases key={e.name}
-                //                     pickMusic={() => pickMusic(e)}
-                //     imageSource={
-                //                      e.images[1].url ? e.images[1].url : "images/face.png"
-                //                     }
-                //                     releaseTitle={
-                //                      e.name
-                //                     }
-                //   />
                 ))}
                
  {/* <AlbumChart/>

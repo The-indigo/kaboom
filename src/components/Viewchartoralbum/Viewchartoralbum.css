@@ -92,13 +92,13 @@
         display: none;
     }
 
+}
+
+@media(max-width:800px) {
     .hide {
         display: none;
     }
 
-}
-
-@media(max-width:800px) {
     .viewchart-button-div {
         flex-wrap: wrap;
         gap: .3rem;

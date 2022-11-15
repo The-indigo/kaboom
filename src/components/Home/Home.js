@@ -156,7 +156,7 @@ const Home = () => {
     return (
       <>
         <Mobilenav
-          showHideNav={openNav}
+          showHideNav={ openNav}
           homeClick={homeClick}
           collectionsClick={collectionsClick}
         />
