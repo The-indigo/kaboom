@@ -1,12 +1,9 @@
 import React, { useEffect, useLayoutEffect, useState, useRef, useContext } from "react";
-// import axios from "axios";
-
 import "./Home.css";
 import Newreleases from "../shared/Newreleases/Newreleases";
 import Search from "../shared/Search/Search";
 import Nav from "../shared/Nav/Nav";
 import Mainpage from "../Mainpage/Mainpage";
-// import bg from "./lead.png";
 import Collections from "../Collections/Collections";
 import Viewchartoralbum from "../Viewchartoralbum/Viewchartoralbum";
 import Audiocontrols from "../shared/Audiocontrols/Audiocontrols";
@@ -14,11 +11,9 @@ import Mobilenav from "../shared/Mobilenav/Mobilenav";
 import { MusicContext } from "../../store/musicContext";
 import gsap from "gsap";
 
-// let albumData = [];
 
 const Home = () => {
   const [page, setPage] = useState("home");
-  const [albums, setAlbums] = useState([]);
   const [navOpen, setNavOpen] = useState(false);
   const collectionsRef = useRef();
 
@@ -52,23 +47,9 @@ const Home = () => {
     }
   }, [navOpen]);
 
-  useEffect(() => {
-    // const fetchAlbums = async () => {
-    //   try {
-    //     const response = await axios.request(options);
-    //     if (response.data && response.status === 200) {
-    //       albumData = response.data.albums;
-    //       setAlbums(response.data.albums)
-    //     }
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // };
-    // fetchAlbums();
-  }, []);
-
   useLayoutEffect(() => {
     if (page === "topcharts") {
+       setNavOpen(false)
       // var getBody = document.querySelector('body');
       // console.log(getBody)
       // var bodyAfter = window.getComputedStyle(getBody, "::after");
@@ -91,6 +72,7 @@ const Home = () => {
       // document.body.style.backgroundColor = "#1E1E1E";
       // document.body.style.backgroundBlendMode="smooth"
     } else if (page === "collections") {
+       setNavOpen(false)
       let ctx = gsap.context(() => {
         gsap.from(".collections-component-div", {
           opacity: 0,
@@ -100,6 +82,7 @@ const Home = () => {
       }, collectionsRef);
       return () => ctx.revert();
     } else {
+       setNavOpen(false)
           let ctx = gsap.context(() => {
         gsap.from(".home-component-div", {
           opacity: 0,
@@ -109,23 +92,20 @@ const Home = () => {
       }, collectionsRef);
       return () => ctx.revert();
     }
+     
   }, [page]);
   const homeClick = () => {
     setPage("home");
-    setNavOpen(false);
   };
   const collectionsClick = () => {
     setPage("collections");
-    setNavOpen(false);
   };
   const topChartsClick = () => {
     setPage("topcharts");
-    setNavOpen(false);
   };
     const pickMusic = (data) => {
       musicContext.pickMusic(data)
-      topChartsClick()
-    
+      setPage("topcharts");
       }
 
   if (page === "collections") {
@@ -154,7 +134,7 @@ const Home = () => {
     );
   } else if (page === "topcharts") {
     return (
-      <>
+      <div>
         <Mobilenav
           showHideNav={ openNav}
           homeClick={homeClick}
@@ -170,7 +150,7 @@ const Home = () => {
           </main>
         </div>
         <Audiocontrols />
-      </>
+      </div>
     );
   } else if (page === "home") {
     return (
