@@ -53,7 +53,7 @@ const MusicContextProvider = ({ children }) => {
         if (isPlaying) {
             setTimeout(() => {
             setDuration(ad.currentTime)    
-            },900)
+            },1000)
             
             console.log(duration)
             console.log(ad.currentTime)

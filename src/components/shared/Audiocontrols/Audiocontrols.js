@@ -60,12 +60,12 @@ const Audiocontrols = () => {
             width={11}
             className="audio-icon"
               />
-              <div className="play-icon" onClick={playMusic}>
+              <div className="play-icon audio-icon audio-icon-play" onClick={playMusic}>
   <FontAwesomeIcon
             icon= {musicContext.isPlaying===false?faPlay:faPause} 
                 size="1x"
             width={11}
-            className="audio-icon audio-icon-play"
+            // className="audio-icon audio-icon-play"
               />
               </div>
                        
