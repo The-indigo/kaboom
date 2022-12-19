@@ -10,7 +10,6 @@ export const MusicContext = createContext({
   isPlaying: false,
     pickedMusic: {},
   pickedTrack:{},
-  // setMusicItems:()=>{},
     pickMusic: (data) => { },
   pickTrack:(data)=>{},
   duration: 0,
@@ -58,7 +57,6 @@ const MusicContextProvider = ({ children }) => {
         if (response.data && response.status === 200) {
           data = response.data.albums;
             setMusicList(response.data.albums);
-            console.log("it fetched again/.....")
         }
       } catch (error) {
         console.error(error);
@@ -89,9 +87,12 @@ const MusicContextProvider = ({ children }) => {
   const addToCollection = () => {
     let data = pickedMusic
     setCollections([...collections, data])
-    console.log(collections)
   }
  
+  const addToLikes = () => {
+    let data = pickedMusic
+    setLikes([...likes,data])
+  }
 
   const pickMusic = (data) => {
     setPickedMusic(data);
@@ -156,6 +157,7 @@ const MusicContextProvider = ({ children }) => {
     playMusic,
     playAllSongs,
     addToCollection,
+    addToLikes,
     collections:collections
     //   setMusicItems:setMusicItems
   };
