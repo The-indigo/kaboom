@@ -25,11 +25,11 @@ const Viewchartoralbum = () => {
                 <p className='viewchart-text-div-p2'>{musicContext.pickedMusic.tracks.total} songs ~ 10 mins+</p>
             
             <div className='viewchart-button-div'>
-                        <div className="play-button chart-button">
+                        <div onClick={musicContext.playAllSongs} className="play-button chart-button">
                             <img src='images/playicon.png' alt='play icon'/>
                     <p>Play all</p>
                 </div>
-                        <div className="add-button chart-button">
+                        <div  onClick={musicContext.addToCollection} className="add-button chart-button">
                             <img src='images/musicadd.png' alt='add music icon'/>
                     <p>Add to collection</p>
                         </div>

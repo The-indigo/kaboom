@@ -45,11 +45,13 @@ body::after {
 }
 
 .audio-div {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     bottom: 0;
     margin-bottom: 0;
     z-index: 2;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background: rgba(51, 55, 59, 0.37);
     backdrop-filter: blur(5px);
 }

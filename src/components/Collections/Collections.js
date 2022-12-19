@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import { MusicContext } from "../../store/musicContext";
 import CollectionsItem from "../shared/CollectionsItem/CollectionsItem";
 import "./Collections.css";
 
 const Collections = () => {
+      const musicContext = useContext(MusicContext)
+
     return (
         <div className="col">
             <section className="collections-sections">
@@ -14,16 +17,36 @@ const Collections = () => {
                 </div>
             </section>
 
-            <section className="collections-image-section">
+            {/* <section className="collections-image-section">
                 <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
                 <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
-                <CollectionsItem imageSource={"images/blind.png"} name="Limits" artist={"John Watts"} />
-                <CollectionsItem imageSource={"images/sun.png"} name="Limits" artist={"John Watts"} />
-                     <CollectionsItem imageSource={"images/ink.png"} name="Limits" artist={"John Watts"} />
-                    <CollectionsItem imageSource={"images/face.png"} name="Limits" artist={"John Watts"}/>
+
+                                 <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
+  <CollectionsItem imageSource={"images/fly.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
+
+                                 <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
+                <CollectionsItem imageSource={"images/lead.png"} name="Limits" artist={"John Watts"} />
+
+                
 
             
-            </section>
+            </section> */}
+{musicContext.collections.length === 0 ?
+                <p>You have no item in your collection</p>
+                    : 
+            <section className="collections-image-section">
+                
+                    {musicContext.collections.map((e, index) => (
+                        <CollectionsItem key={index} imageSource={e.images[1].url} name={e.name} artist={e.artists[0].name} />
+                    ))}
+                     </section>
+                 }
+
+
+            
+           
         </div>
     )
 }

@@ -5,8 +5,11 @@ import { faPlay} from "@fortawesome/free-solid-svg-icons";
 const CollectionsItem = ({imageSource,name,artist}) => {
     return (
         <>
-                    <div className="collections">
-                    <img src={imageSource} alt="flying album" />
+            <div className="collections">
+                {/* <div className="collections-item-img-div"> */}
+ <img src={imageSource} alt="flying album" />
+                {/* </div> */}
+                   
                     <div className="collections-text">
        <h1>{name}</h1>
                     <p>{artist}</p>
@@ -27,7 +30,8 @@ const CollectionsItem = ({imageSource,name,artist}) => {
                     </div>
                     </div>
              
-                </div></>
+            </div>
+        </>
     )
 }
 export default CollectionsItem

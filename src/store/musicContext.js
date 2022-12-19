@@ -5,6 +5,8 @@ let data = [];
 
 export const MusicContext = createContext({
   musicList: [],
+  collections: [],
+  likes:[],
   isPlaying: false,
     pickedMusic: {},
   pickedTrack:{},
@@ -13,14 +15,20 @@ export const MusicContext = createContext({
   pickTrack:(data)=>{},
   duration: 0,
   handleDurationChange: () => {},
-  playMusic: () => {},
+  playMusic: () => { },
+  addToCollection: () => { },
+  addToLikes: ()=>{},
+  playAllSongs:()=>{}
 });
 let ad;
 const MusicContextProvider = ({ children }) => {
   const [musicList, setMusicList] = useState([]);
+  const [collections, setCollections] = useState([])
+  const [likes,setLikes]=useState([])
     const [pickedMusic, setPickedMusic] = useState();
     const [pickedTrack, setPickedTrack] = useState();
   const [duration, setDuration] = useState(0);
+  const [playAll, setPlayAll] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
    
 
@@ -73,21 +81,29 @@ const MusicContextProvider = ({ children }) => {
         
       setTimeout(() => {
         setDuration(ad.currentTime);
+        console.log(ad.currentTime)
       }, 1000);
 
     }
-  });
+    });
+  const addToCollection = () => {
+    let data = pickedMusic
+    setCollections([...collections, data])
+    console.log(collections)
+  }
+ 
 
   const pickMusic = (data) => {
-      setPickedMusic(data);
+    setPickedMusic(data);
+
   };
+
     const pickTrack = (data) => {
         setPickedTrack(data);
         console.log(data)
     }
 
   const playMusic = () => {
-     
       setIsPlaying(!isPlaying);
       if (isPlaying === false) {
         //   ad.play()
@@ -106,6 +122,28 @@ const MusicContextProvider = ({ children }) => {
     }
   };
 
+    // put all the songs in an array
+  //add the currentelement to the picked track
+  //check if the song has reached the end
+  //if song reaches the end (30 seconds) remove the song
+  //set track to next element in array
+  //you are doing a combination of pick track and play music
+  const playAllSongs = () => {
+    //  let allSongs = pickedMusic.tracks.items
+    // let currentPlaying=allSongs[0]
+    // pickTrack(currentPlaying)
+    // ad.src = currentPlaying.preview_url
+    // ad.load()
+    // setPlayAll(!playAll)
+    // if (currentPlaying !== undefined) {
+    //   console.log('currently....')
+    //    playMusic()
+    // }
+        
+  
+    
+  }
+
   const value = {
     musicList: musicList,
       pickedMusic: pickedMusic,
@@ -116,6 +154,9 @@ const MusicContextProvider = ({ children }) => {
     duration: duration,
     // handleDurationChange,
     playMusic,
+    playAllSongs,
+    addToCollection,
+    collections:collections
     //   setMusicItems:setMusicItems
   };
   return (
