@@ -5,6 +5,7 @@ let data = [];
 
 export const MusicContext = createContext({
   musicList: [],
+  loadingError:'',
   collections: [],
   likes:[],
   isPlaying: false,
@@ -23,6 +24,7 @@ let ad;
 const MusicContextProvider = ({ children }) => {
   const [musicList, setMusicList] = useState([]);
   const [collections, setCollections] = useState([])
+  const [loadingError, setLoadingError] = useState(null);
   const [likes,setLikes]=useState([])
     const [pickedMusic, setPickedMusic] = useState();
     const [pickedTrack, setPickedTrack] = useState();
@@ -59,6 +61,7 @@ const MusicContextProvider = ({ children }) => {
             setMusicList(response.data.albums);
         }
       } catch (error) {
+        setLoadingError("An error occured while fetching music content")
         console.error(error);
       }
     };
@@ -158,6 +161,7 @@ const MusicContextProvider = ({ children }) => {
     playAllSongs,
     addToCollection,
     addToLikes,
+    loadingError,
     collections:collections
     //   setMusicItems:setMusicItems
   };

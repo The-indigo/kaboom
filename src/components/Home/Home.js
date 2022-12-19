@@ -175,20 +175,24 @@ const Home = () => {
 
             <section>
               <h1>New releases</h1>
-              <div className="new-releases">
-                                {musicContext.musicList.map((e) => (
-                                  <Newreleases key={e.id}
-                                    pickMusic={() => pickMusic(e)}
-                    imageSource={
-                                     e.images[1].url ? e.images[1].url : "images/face.png"
-                                    }
-                                    releaseTitle={
-                                     e.name
-                                    }
-                  />
-                ))}
-                {/* console.log(albumData.albums[0]) */}
-                {/* {albums.map((e) => (
+              {musicContext.loadingError !== null ?
+                <p>{musicContext.loadingError}</p>
+                : <div className="new-releases">
+                  {musicContext.musicList.map((e) => (
+                    <Newreleases key={e.id}
+                      pickMusic={() => pickMusic(e)}
+                      imageSource={
+                        e.images[1].url ? e.images[1].url : "images/face.png"
+                      }
+                      releaseTitle={
+                        e.name
+                      }
+                    />
+                  ))}
+            
+              
+                  {/* console.log(albumData.albums[0]) */}
+                  {/* {albums.map((e) => (
                   <Newreleases
                     imageSource={
                       e.images[1].url ? e.images[1].url : "images/face.png"
@@ -196,7 +200,7 @@ const Home = () => {
                     releaseTitle={e.name ? e.name : "Mountain"}
                   />
                 ))} */}
-                {/* <Newreleases
+                  {/* <Newreleases
                   imageSource={"images/alpha.png"}
                   releaseTitle={"Life in a bubble"}
                 />
@@ -241,7 +245,8 @@ const Home = () => {
                   imageSource={"images/sun.png"}
                   releaseTitle={"Here again"}
                 /> */}
-              </div>
+                </div>
+              }
             </section>
           </main>
         </div>

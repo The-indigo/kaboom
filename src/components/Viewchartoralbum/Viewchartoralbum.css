@@ -50,6 +50,7 @@
 
 .chart-button {
     backdrop-filter: blur(5px);
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,6 +71,7 @@
 
 .tracks {
     margin-top: 2rem;
+    cursor: pointer;
     top: 0;
 }
 
