@@ -61,7 +61,7 @@ const MusicContextProvider = ({ children }) => {
             setMusicList(response.data.albums);
         }
       } catch (error) {
-        setLoadingError("An error occured while fetching music content")
+        setLoadingError("Something happened while fetching music content, refresh page to try again.")
         console.error(error);
       }
     };
