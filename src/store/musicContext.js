@@ -5,6 +5,7 @@ let data = [];
 
 export const MusicContext = createContext({
   musicList: [],
+  loading:'',
   loadingError:'',
   collections: [],
   likes:[],
@@ -23,6 +24,7 @@ export const MusicContext = createContext({
 let ad;
 const MusicContextProvider = ({ children }) => {
   const [musicList, setMusicList] = useState([]);
+  const [loading,setLoading]=useState(false)
   const [collections, setCollections] = useState([])
   const [loadingError, setLoadingError] = useState(null);
   const [likes,setLikes]=useState([])
@@ -41,7 +43,9 @@ const MusicContextProvider = ({ children }) => {
     },[pickedTrack])
 
     useEffect(() => {
+      
     const fetchAlbums = async () => {
+      setLoading(true)
       const getAlbumoptions = {
         method: "GET",
         url: "https://spotify23.p.rapidapi.com/albums/",
@@ -60,10 +64,12 @@ const MusicContextProvider = ({ children }) => {
           data = response.data.albums;
             setMusicList(response.data.albums);
         }
+        setLoading(false)
       } catch (error) {
-        setLoadingError("Something happened while fetching music content, refresh page to try again.")
+        setLoadingError("Something happened while fetching music content,refresh page to try again.")
         console.error(error);
       }
+      setLoading(false)
     };
      fetchAlbums();
     // const setMusicItems = () => {
@@ -150,6 +156,7 @@ const MusicContextProvider = ({ children }) => {
 
   const value = {
     musicList: musicList,
+    loading:loading,
       pickedMusic: pickedMusic,
       pickedTrack: pickedTrack,
     pickTrack:pickTrack,

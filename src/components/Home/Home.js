@@ -175,9 +175,16 @@ const Home = () => {
 
             <section>
               <h1>New releases</h1>
-              {musicContext.loadingError !== null ?
+              {musicContext.loading===true ?
+            <p>Loading Albums.....</p>  
+            :
+            musicContext.loadingError !== null ?
                 <p>{musicContext.loadingError}</p>
-                : <div className="new-releases">
+            
+                :
+                  
+                 <div className="new-releases">
+                  {/* {console.log(musicContext.musicList)} */}
                   {musicContext.musicList.map((e) => (
                     <Newreleases key={e.id}
                       pickMusic={() => pickMusic(e)}
@@ -191,60 +198,6 @@ const Home = () => {
                   ))}
             
               
-                  {/* console.log(albumData.albums[0]) */}
-                  {/* {albums.map((e) => (
-                  <Newreleases
-                    imageSource={
-                      e.images[1].url ? e.images[1].url : "images/face.png"
-                    }
-                    releaseTitle={e.name ? e.name : "Mountain"}
-                  />
-                ))} */}
-                  {/* <Newreleases
-                  imageSource={"images/alpha.png"}
-                  releaseTitle={"Life in a bubble"}
-                />
-
-                <Newreleases
-                  imageSource={"images/mountain.png"}
-                  releaseTitle={"Mountain"}
-                />
-                <Newreleases
-                  imageSource={"images/fly.png"}
-                  releaseTitle={"Limits"}
-                />
-                <Newreleases
-                  imageSource={"images/sun.png"}
-                  releaseTitle={"Everything black"}
-                />
-                <Newreleases
-                  imageSource={"images/face.png"}
-                  releaseTitle={"Cancelled"}
-                />
-                <Newreleases
-                  imageSource={"images/ink.png"}
-                  releaseTitle={"Nomad"}
-                />
-                <Newreleases
-                  imageSource={"images/blind.png"}
-                  releaseTitle={"Blind"}
-                />
-                <Newreleases
-                  imageSource={"images/lead.png"}
-                  releaseTitle={"Alone"}
-                />
-                <Newreleases
-                  imageSource={"images/black.png"}
-                  releaseTitle={"Face off"}
-                />
-                <Newreleases
-                  imageSource={"images/mountain.png"}
-                  releaseTitle={"Gone"}
-                />
-                <Newreleases
-                  imageSource={"images/sun.png"}
-                  releaseTitle={"Here again"}
-                /> */}
                 </div>
               }
             </section>
