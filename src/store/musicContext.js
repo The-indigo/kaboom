@@ -87,6 +87,7 @@ const MusicContextProvider = ({ children }) => {
       const playPromise = ad.play();
       if (playPromise !== undefined) {
         playPromise.then(_ => {
+            setIsPlaying(true)
         }).catch(error => {
           console.log(error, "error")
         })
@@ -138,7 +139,6 @@ const MusicContextProvider = ({ children }) => {
                setInterval(() => {
       index = index + 1
       if (!(index > allSongs.length)) {
-  setPlayAll(true)
     setPickedTrack(allSongs[index])
     setIsPlaying(true)
       }
