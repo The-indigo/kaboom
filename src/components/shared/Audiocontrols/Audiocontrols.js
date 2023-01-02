@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useState } from "react"
 import "./Audiocontrols.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShuffle,faBackwardStep,faForwardStep,faPlay,faRepeat,faVolumeHigh,faPause} from "@fortawesome/free-solid-svg-icons";

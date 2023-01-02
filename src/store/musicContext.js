@@ -5,45 +5,45 @@ let data = [];
 
 export const MusicContext = createContext({
   musicList: [],
-  loading:'',
-  loadingError:'',
+  loading: '',
+  loadingError: '',
   collections: [],
-  likes:[],
+  likes: [],
   isPlaying: false,
-    pickedMusic: {},
-  pickedTrack:{},
-    pickMusic: (data) => { },
-  pickTrack:(data)=>{},
+  pickedMusic: {},
+  pickedTrack: {},
+  pickMusic: (data) => { },
+  pickTrack: (data) => { },
   duration: 0,
-  handleDurationChange: () => {},
+  handleDurationChange: () => { },
   playMusic: () => { },
   addToCollection: () => { },
-  addToLikes: ()=>{},
-  playAllSongs:()=>{}
+  addToLikes: () => { },
+  playAllSongs: () => { }
 });
 let ad;
 const MusicContextProvider = ({ children }) => {
   const [musicList, setMusicList] = useState([]);
-  const [loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false)
   const [collections, setCollections] = useState([])
   const [loadingError, setLoadingError] = useState(null);
-  const [likes,setLikes]=useState([])
-    const [pickedMusic, setPickedMusic] = useState();
-    const [pickedTrack, setPickedTrack] = useState();
+  const [likes, setLikes] = useState([])
+  const [pickedMusic, setPickedMusic] = useState();
+  const [pickedTrack, setPickedTrack] = useState();
   const [duration, setDuration] = useState(0);
   const [playAll, setPlayAll] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false);
-   
+  const [isPlaying, setIsPlaying] = useState(false);
 
 
-    useEffect(() => {
-        ad = document.querySelector("audio");
-        ad.value = 0;
-        setIsPlaying(false)
-    },[pickedTrack])
 
-    useEffect(() => {
-      
+  useEffect(() => {
+    ad = document.querySelector("audio");
+    ad.value = 0;
+    setIsPlaying(false)
+  }, [pickedTrack])
+
+  useEffect(() => {
+
     const fetchAlbums = async () => {
       setLoading(true)
       const getAlbumoptions = {
@@ -62,7 +62,7 @@ const MusicContextProvider = ({ children }) => {
         const response = await axios.request(getAlbumoptions);
         if (response.data && response.status === 200) {
           data = response.data.albums;
-            setMusicList(response.data.albums);
+          setMusicList(response.data.albums);
         }
         setLoading(false)
       } catch (error) {
@@ -71,36 +71,36 @@ const MusicContextProvider = ({ children }) => {
       }
       setLoading(false)
     };
-     fetchAlbums();
+    fetchAlbums();
     // const setMusicItems = () => {
- 
-// console.log(data)
-      //  setMusicList(data);
+
+    // console.log(data)
+    //  setMusicList(data);
     //   setPickedMusic(data[0]);
-      //  console.log(ad);
-      //  console.log(ad.currentTime)
+    //  console.log(ad);
+    //  console.log(ad.currentTime)
     // };
     // setMusicItems();
   }, []);
 
-    useEffect(() => {
-        if (isPlaying) {
-        
+  useEffect(() => {
+    if (isPlaying) {
+
       setTimeout(() => {
         setDuration(ad.currentTime);
-        console.log(ad.currentTime)
+        // console.log(ad.currentTime)
       }, 1000);
 
     }
-    });
+  });
   const addToCollection = () => {
     let data = pickedMusic
     setCollections([...collections, data])
   }
- 
+
   const addToLikes = () => {
     let data = pickedMusic
-    setLikes([...likes,data])
+    setLikes([...likes, data])
   }
 
   const pickMusic = (data) => {
@@ -108,37 +108,69 @@ const MusicContextProvider = ({ children }) => {
 
   };
 
-    const pickTrack = (data) => {
-        setPickedTrack(data);
-        console.log(data)
-    }
+  const pickTrack = (data) => {
+    setPickedTrack(data);
+    console.log(data)
+  }
 
   const playMusic = () => {
-      setIsPlaying(!isPlaying);
-      if (isPlaying === false) {
-        //   ad.play()
-          const playPromise = ad.play();
-          console.log(playPromise)
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                console.log("playing playing....")
-            }).catch(error => {
-                console.log(error,"error")
-            })
-        }
-      } else {
-          console.log("did this pause it")
+    setIsPlaying(!isPlaying);
+    if (isPlaying === false) {
+      //   ad.play()
+      const playPromise = ad.play();
+      console.log(playPromise)
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          console.log("playing playing....")
+        }).catch(error => {
+          console.log(error, "error")
+        })
+      }
+    } else {
+      console.log("did this pause it")
       ad.pause();
     }
   };
 
-    // put all the songs in an array
-  //add the currentelement to the picked track
-  //check if the song has reached the end
-  //if song reaches the end (30 seconds) remove the song
-  //set track to next element in array
-  //you are doing a combination of pick track and play music
   const playAllSongs = () => {
+    // setIsPlaying(!isPlaying)
+    let index = 0
+    let allSongs = pickedMusic.tracks.items  
+    console.log('first', allSongs[index].duration_ms);
+    pickTrack(allSongs[0])
+          const playPromise = ad.play();
+      console.log(playPromise)
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          console.log("playing playing....")
+        }).catch(error => {
+          console.log(error, "error")
+        })
+      }
+    setInterval(() => {
+      index = index + 1
+      if (!(index > allSongs.length)) {
+         pickTrack(allSongs[index])
+            if (isPlaying === false) {
+      const playPromise = ad.play();
+      console.log(playPromise)
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          console.log("playing playing....")
+        }).catch(error => {
+          console.log(error, "error")
+        })
+      }
+    } 
+               console.log(index)
+        console.log(allSongs[index])
+        console.log(allSongs[index].duration_ms);
+      }
+   
+    },30050
+      //allSongs[index].duration_ms
+    );
+    
     //  let allSongs = pickedMusic.tracks.items
     // let currentPlaying=allSongs[0]
     // pickTrack(currentPlaying)
@@ -149,17 +181,17 @@ const MusicContextProvider = ({ children }) => {
     //   console.log('currently....')
     //    playMusic()
     // }
-        
-  
-    
+
+
+
   }
 
   const value = {
     musicList: musicList,
-    loading:loading,
-      pickedMusic: pickedMusic,
-      pickedTrack: pickedTrack,
-    pickTrack:pickTrack,
+    loading: loading,
+    pickedMusic: pickedMusic,
+    pickedTrack: pickedTrack,
+    pickTrack: pickTrack,
     isPlaying: isPlaying,
     pickMusic: pickMusic,
     duration: duration,
@@ -169,7 +201,7 @@ const MusicContextProvider = ({ children }) => {
     addToCollection,
     addToLikes,
     loadingError,
-    collections:collections
+    collections: collections
     //   setMusicItems:setMusicItems
   };
   return (
