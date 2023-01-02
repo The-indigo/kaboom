@@ -178,7 +178,7 @@ const Home = () => {
               {musicContext.loading===true ?
             <p>Loading Albums.....</p>  
             :
-            musicContext.loadingError !== null ?
+            musicContext.loadingError  ?
                 <p>{musicContext.loadingError}</p>
             
                 :

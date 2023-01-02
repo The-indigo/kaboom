@@ -43,7 +43,6 @@ const MusicContextProvider = ({ children }) => {
   }, [pickedTrack])
 
   useEffect(() => {
-
     const fetchAlbums = async () => {
       setLoading(true)
       const getAlbumoptions = {
@@ -72,27 +71,29 @@ const MusicContextProvider = ({ children }) => {
       setLoading(false)
     };
     fetchAlbums();
-    // const setMusicItems = () => {
-
-    // console.log(data)
-    //  setMusicList(data);
-    //   setPickedMusic(data[0]);
-    //  console.log(ad);
-    //  console.log(ad.currentTime)
-    // };
-    // setMusicItems();
   }, []);
 
   useEffect(() => {
     if (isPlaying) {
-
       setTimeout(() => {
         setDuration(ad.currentTime);
         // console.log(ad.currentTime)
       }, 1000);
-
     }
   });
+  useEffect(() => {
+    console.log("called") 
+    if (playAll === true && pickedTrack && isPlaying === true) {
+      const playPromise = ad.play();
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+        }).catch(error => {
+          console.log(error, "error")
+        })
+      }
+    }
+  },[playAll,pickedTrack,isPlaying])
+
   const addToCollection = () => {
     let data = pickedMusic
     setCollections([...collections, data])
@@ -105,7 +106,6 @@ const MusicContextProvider = ({ children }) => {
 
   const pickMusic = (data) => {
     setPickedMusic(data);
-
   };
 
   const pickTrack = (data) => {
@@ -116,72 +116,36 @@ const MusicContextProvider = ({ children }) => {
   const playMusic = () => {
     setIsPlaying(!isPlaying);
     if (isPlaying === false) {
-      //   ad.play()
       const playPromise = ad.play();
-      console.log(playPromise)
       if (playPromise !== undefined) {
         playPromise.then(_ => {
-          console.log("playing playing....")
         }).catch(error => {
           console.log(error, "error")
         })
       }
     } else {
-      console.log("did this pause it")
       ad.pause();
     }
   };
 
   const playAllSongs = () => {
-    // setIsPlaying(!isPlaying)
-    let index = 0
+    let index=0
     let allSongs = pickedMusic.tracks.items  
-    console.log('first', allSongs[index].duration_ms);
-    pickTrack(allSongs[0])
-          const playPromise = ad.play();
-      console.log(playPromise)
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          console.log("playing playing....")
-        }).catch(error => {
-          console.log(error, "error")
-        })
-      }
-    setInterval(() => {
+    setPlayAll(true)
+    setPickedTrack(allSongs[0])
+    setIsPlaying(true)
+    
+               setInterval(() => {
       index = index + 1
       if (!(index > allSongs.length)) {
-         pickTrack(allSongs[index])
-            if (isPlaying === false) {
-      const playPromise = ad.play();
-      console.log(playPromise)
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          console.log("playing playing....")
-        }).catch(error => {
-          console.log(error, "error")
-        })
-      }
-    } 
-               console.log(index)
-        console.log(allSongs[index])
-        console.log(allSongs[index].duration_ms);
+  setPlayAll(true)
+    setPickedTrack(allSongs[index])
+    setIsPlaying(true)
       }
    
     },30050
       //allSongs[index].duration_ms
     );
-    
-    //  let allSongs = pickedMusic.tracks.items
-    // let currentPlaying=allSongs[0]
-    // pickTrack(currentPlaying)
-    // ad.src = currentPlaying.preview_url
-    // ad.load()
-    // setPlayAll(!playAll)
-    // if (currentPlaying !== undefined) {
-    //   console.log('currently....')
-    //    playMusic()
-    // }
-
 
 
   }
