@@ -103,7 +103,7 @@ const Home = () => {
   const topChartsClick = () => {
     setPage("topcharts");
   };
-    const pickMusic = (data) => {
+  const pickMusic = (data) => {
       musicContext.pickMusic(data)
       setPage("topcharts");
       }
@@ -170,7 +170,7 @@ const Home = () => {
                 collectionsClick={collectionsClick}
                 page={page}
               />
-              <Mainpage topChartsClick={topChartsClick} />
+              <Mainpage pickMusic={pickMusic}/>
             </section>
 
             <section>
@@ -178,7 +178,7 @@ const Home = () => {
               {musicContext.loading===true ?
             <p>Loading Albums.....</p>  
             :
-            musicContext.loadingError  ?
+            musicContext.loadingError ?
                 <p>{musicContext.loadingError}</p>
             
                 :

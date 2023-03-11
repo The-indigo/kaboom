@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import TopchartItem from "../shared/Topcharts/TopchartItem";
+import { MusicContext } from "../../store/musicContext";
+
 import "./Mainpage.css";
-const Mainpage = ({}) => {
+const Mainpage = ({pickMusic}) => {
+  const musicContext = useContext(MusicContext)
+
+  
     return (
         <>
             <div className="hero-section">
@@ -43,13 +48,23 @@ const Mainpage = ({}) => {
                  </div>
           <div className="top-charts">
             <h1>Top Charts</h1>
-            <div className="top-charts-div">
-            <TopchartItem imageSource={"images/face.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"}
-              // onClick={topChartsClick}
+          <div className="top-charts-div">
+            {musicContext.musicList.slice(-5).map((e) => (
+              <TopchartItem key={e.id}
+               imageSource={
+                        e.images[1].url ? e.images[1].url : "images/face.png"
+                      }
+                trackName={e.name}
+                // tarckArtist={"Sean swadder"}
+              trackTime={`${e.tracks.total} songs`}
+              onClick={()=>pickMusic(e)}
               />
-                        <TopchartItem imageSource={"images/fly.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
-              trackTime={"2:34:45"}
+                    
+                  ))}
+            
+{/*             
+                        <TopchartItem imageSource={"images/fly.png"} trackName="Here for your love" tarckArtist={"Ben Ray"}
+              trackTime={"0:34:45"}
               // onClick={topChartsClick}
               />
                         <TopchartItem imageSource={"images/lead.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
@@ -64,7 +79,7 @@ const Mainpage = ({}) => {
                         <TopchartItem imageSource={"images/lead.png"} trackName="Golden age of 8os" tarckArtist={"Sean swadder"}
               trackTime={"2:34:45"}
               // onClick={topChartsClick}
-              />
+              /> */}
 
             </div>
 
