@@ -94,8 +94,8 @@ const MusicContextProvider = ({ children }) => {
     }
   },[playAll,pickedTrack,isPlaying])
 
-  const addToCollection = () => {
-    let data = pickedMusic
+  const addToCollection = (id) => {
+    let data = pickedMusic || musicList.find(n=>n.id===id)
     setCollections([...collections, data])
   }
 

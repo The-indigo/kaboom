@@ -38,9 +38,12 @@ const Collections = () => {
                     : 
             <section className="collections-image-section">
                 
-                    {musicContext.collections.map((e, index) => (
-                        <CollectionsItem key={index} imageSource={e.images[1].url} name={e.name} artist={e.artists[0].name} />
-                    ))}
+                    {musicContext.collections.map((e, index) => {
+
+                    console.log(e);
+                      return  <CollectionsItem key={index} imageSource={e.images[1].url} name={e.name} artist={e.artists[0].name} />
+                    }
+                    )}
                      </section>
                  }
 

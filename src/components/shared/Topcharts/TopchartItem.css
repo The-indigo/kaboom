@@ -54,6 +54,7 @@
     padding: .7rem;
     display: flex;
     align-items: center;
+    border: 2px solid red;
     justify-content: center;
     border-radius: 50%;
 }

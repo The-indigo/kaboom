@@ -57,7 +57,9 @@ const Mainpage = ({pickMusic}) => {
                 trackName={e.name}
                 // tarckArtist={"Sean swadder"}
               trackTime={`${e.tracks.total} songs`}
-              onClick={()=>pickMusic(e)}
+                onClick={() => pickMusic(e)                
+                }
+                addToCollections={()=>musicContext.addToCollection(e.id)}
               />
                     
                   ))}
