@@ -13,7 +13,6 @@
     background-color: #FACD66;
     width: 1.5rem;
     height: 1.5rem;
-
     border-radius: 50%;
 
     cursor: pointer;
@@ -89,7 +88,7 @@ input[type=range]::-webkit-slider-runnable-track {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #181515;
 }
 
 input[type=range]::-webkit-slider-thumb {
