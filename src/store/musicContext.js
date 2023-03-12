@@ -82,7 +82,6 @@ const MusicContextProvider = ({ children }) => {
     }
   });
   useEffect(() => {
-    console.log("called") 
     if (playAll === true && pickedTrack && isPlaying === true) {
       const playPromise = ad.play();
       if (playPromise !== undefined) {

@@ -18,6 +18,9 @@
 
     cursor: pointer;
 }
+.play-pause-icon{
+    margin-left: .1rem;
+}
 
 .audio-icon {
     cursor: pointer;

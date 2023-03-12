@@ -48,10 +48,10 @@ const Audiocontrols = () => {
             className="audio-icon"
               />
               <div className="play-icon audio-icon audio-icon-play" onClick={playMusic}>
-  <FontAwesomeIcon
+  <FontAwesomeIcon className="play-pause-icon"
             icon= {musicContext.isPlaying===false?faPlay:faPause} 
                 size="1x"
-            width={11}
+            width={9}
               />
               </div>
                        
