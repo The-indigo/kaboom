@@ -1,5 +1,11 @@
+body{
+    /* border:2px solid yellow; */
+    margin-bottom:11rem;
+}
 body::after {
-    content: "";
+    /* content: "";
+    margin-bottom:32rem;
+    border:2px solid red; */
     /* background: url("/images/lead.png");
     background-repeat: no-repeat;
     background-size: 100% 80vh;

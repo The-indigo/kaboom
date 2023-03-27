@@ -128,23 +128,25 @@ const MusicContextProvider = ({ children }) => {
     }
   };
 
+
+  // yet to fully implement
   const playAllSongs = () => {
-    let index=0
-    let allSongs = pickedMusic.tracks.items  
-    setPlayAll(true)
-    setPickedTrack(allSongs[0])
-    setIsPlaying(true)
+    // let index=0
+    // let allSongs = pickedMusic.tracks.items  
+    // setPlayAll(true)
+    // setPickedTrack(allSongs[0])
+    // setIsPlaying(true)
     
-               setInterval(() => {
-      index = index + 1
-      if (!(index > allSongs.length)) {
-    setPickedTrack(allSongs[index])
-    setIsPlaying(true)
-      }
+    //            setInterval(() => {
+    //   index = index + 1
+    //   if (!(index > allSongs.length)) {
+    // setPickedTrack(allSongs[index])
+    // setIsPlaying(true)
+    //   }
    
-    },30050
-      //allSongs[index].duration_ms
-    );
+    // },30050
+    //   //allSongs[index].duration_ms
+    // );
 
 
   }
