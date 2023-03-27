@@ -1,7 +1,9 @@
 body{
-    /* border:2px solid yellow; */
-    margin-bottom:11rem;
+    margin-bottom:4.5rem;
+    overflow-y:scroll
 }
+
+
 body::after {
     /* content: "";
     margin-bottom:32rem;

@@ -12,7 +12,10 @@
 
 body {
   margin: 0;
-  height: 100vh;
+     margin-bottom:4.5rem;
+    overflow-y:scroll;
+  /* max-height: 100vh; */
+  /* overflow-y:scroll; */
   background-color: #1D2123;
   color: #fff;
   font-family: 'Quicksand',
